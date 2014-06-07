@@ -19,7 +19,8 @@
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_blog_post_path(@blog) %>
 
-<%= render partial: 'posts/show' %>
 
+<!-- #render partial: 'posts/show'
+ -->
