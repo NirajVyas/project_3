@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140606141254) do
+ActiveRecord::Schema.define(:version => 20140608112319) do
 
   create_table "blogs", :force => true do |t|
     t.string   "date"
@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(:version => 20140606141254) do
     t.string   "stayed"
     t.string   "tags"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "blog_id"
+    t.string   "photo_uploader"
   end
 
   create_table "users", :force => true do |t|
@@ -46,9 +47,22 @@ ActiveRecord::Schema.define(:version => 20140606141254) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.string   "uid"
+    t.string   "author"
+    t.string   "duration"
+    t.integer  "likes"
+    t.integer  "dislikes"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

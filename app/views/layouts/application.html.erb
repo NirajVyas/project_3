@@ -2,25 +2,71 @@
 <html>
 <head>
   <title>TravelApp</title>
+  
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
-</head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+   </head>
 <body>
 
-<%= yield %>
+             
 
- <div class='login'>
+  <div id="topbar"> 
+    <div id="logo"> </div>
+
+
+
+  </div> 
+
+<div class='login'>
   <% if current_user %>
     <%= current_user.email %>
+        <div id="sign-out-button"> Sign Out </div>
+
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign In", new_user_session_path %>
-    <%= link_to "Register", new_user_registration_path %>
+  <% else %>      
+
+    <div id="why"> Why travel blogger? </div>
+    <div id="sign-in-button"> Sign Innnn </div>
+
+    <div id="beach"> </div>
+    <div id="blue">
+
+  </div>
+</div>
+
+    <div id="title"> Travel Blogger.</div>
+   <div id="slogan"> A free travel blog - to capture and document all those special moments. </div>
+   <div id="sign-up-box"> </div>
+
+   <div id="down_arrow"> </div>
+
+    <div id="why_travel_blogger"> Why Travel Blogger? </div>
+
+    <div id="box1">a </div>
+    <div id="box2">a </div>
+    <div id="box3">a </div>
+    <div id="box4">a </div>
+    <div id="box5">a </div>
+
+   
+
+
   <% end %>
+
+
+
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+  
+
+<%= yield %>
+
+ 
 
 </body>
 </html>

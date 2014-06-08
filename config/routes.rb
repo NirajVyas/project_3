@@ -1,8 +1,10 @@
 TravelApp::Application.routes.draw do
-  resources :blogs
 
+  resources :blogs do
+    resources :posts
+  end
 
-  resources :posts
+  resources :videos, only: [:index, :new, :create]
 
 
   devise_for :users
