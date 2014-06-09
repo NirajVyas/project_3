@@ -41,7 +41,8 @@ class Video < ActiveRecord::Base
 
   def get_additional_info
     begin
-      client = YouTubeIt::OAuth2Client.new(dev_key: ENV['YT_DEV'])
+      client = YouTubeIt::OAuth2Client.new(dev_key: 'AIzaSyC4IrYu-LxsibTFcHhJLRSD1qkXQObDk3s
+')
       video = client.video_by(uid)
       self.title = video.title
       self.duration = parse_duration(video.duration)

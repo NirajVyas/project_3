@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :load_blog
+
   # GET /posts
   # GET /posts.json
   def index
@@ -25,7 +27,6 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-    @blog = Blog.find(params[:blog_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,21 +36,17 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-        @blog = Blog.find(params[:blog_id])
-
     @post = Post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @blog = Blog.find(params[:blog_id])
     @post = Post.new(params[:post])
-
+    @post.blog = @blog
     respond_to do |format|
       if @post.save
-        redirect_to blog_path
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post.blog, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -61,8 +58,6 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-        @blog = Blog.find(params[:blog_id])
-
     @post = Post.find(params[:id])
 
     respond_to do |format|
@@ -79,8 +74,6 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-       @blog = Blog.find(params[:blog_id])
-
     @post = Post.find(params[:id])
     @post.destroy
 
@@ -89,4 +82,10 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def load_blog
+    @blog = Blog.find(params[:blog_id])
+  end
+
 end
