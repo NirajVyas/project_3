@@ -21,6 +21,15 @@
 
 <%= link_to 'New Post', new_blog_post_path(@blog) %>
 
+<% @posts.each do |post| %>
+<p><%= post.title %></p>
+<p><%= post.location %></p>
+<p><%= post.date %></p>
+<p><%= post.stayed %></p>
+<p><%= post.tags %></p>
+<p><%= post.body %></p>
+<p><% end %>
 
 <!-- #render partial: 'posts/show'
  -->
+ 

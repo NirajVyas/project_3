@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.find(params[:id])
-
+    @posts = Post.find_all_by_blog_id(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @blog }

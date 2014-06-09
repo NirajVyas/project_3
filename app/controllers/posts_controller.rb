@@ -37,6 +37,12 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+
+      respond_to do |format|
+      format.html { redirect_to edit_blog_post(params[:blog_id], params[:id]) }
+      format.json { head :no_content }
+    end
+
   end
 
   # POST /posts
@@ -78,7 +84,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to blog_posts_url(params[:blog_id]) }
       format.json { head :no_content }
     end
   end
