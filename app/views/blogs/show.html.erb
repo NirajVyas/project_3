@@ -28,7 +28,16 @@
 <p><%= post.stayed %></p>
 <p><%= post.tags %></p>
 <p><%= post.body %></p>
+
+<iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.youtube_id %>" frameborder="0"></iframe>
+
+    <p> <%= link_to 'Edit', edit_blog_post_url(@blog, post) %> </p>
+
+
+
 <p><% end %>
+
+
 
 <!-- #render partial: 'posts/show'
  -->
