@@ -24,6 +24,12 @@
 <div class='login'>
   <% if current_user %>
     <%= current_user.email %>
+
+    <div id="dashboard"> Dashboard </div>
+      <div id="blogs"> Blogs </div>
+      <div id="bloggers"> Bloggers </div>
+      <div id="forum"> Forum </div>
+      <div id="settings"> Settings </div>
         <div id="sign-out-button"> Sign Out </div>
 
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>

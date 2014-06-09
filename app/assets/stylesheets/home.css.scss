@@ -2,3 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.profile {
+  width: 300px;
+  height: 500px;
+  background-color: red;
+  float: right;
+  margin-top: -10%;
+  margin-right: 3%;
+}
+
+#profile_img {
+  content:url(/assets/profile.png);
+  width: 100%;
+}
+
+#email_profile {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#upload_text{
+    font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -30px;
+}

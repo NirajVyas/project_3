@@ -233,6 +233,50 @@
 }
 
 
+#dashboard {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+  float: left;
+  margin-top: -40px;
+  margin-left: 20%;
+  color: white;
+}
+
+#blogs {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+  float: left;
+  margin-top: -40px;
+  margin-left: 30%;
+  color: white;
+}
+
+#bloggers {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+  float: left;
+  margin-top: -40px;
+  margin-left: 40%;
+  color: white;
+}
+
+#forum {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+  float: left;
+  margin-top: -40px;
+  margin-left: 50%;
+  color: white;
+}
+
+#settings {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+  float: left;
+  margin-top: -40px;
+  margin-left: 60%;
+  color: white;
+}
 
 
 
