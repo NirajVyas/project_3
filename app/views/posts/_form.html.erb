@@ -24,8 +24,6 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :youtube_id %>
-
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -64,6 +62,17 @@
     <h2>Videos</h2>
     <p><%= link_to 'Add video now via YouTube Link', new_video_path, class: 'btn btn-primary btn-lg' %> <br /> </p>
 
+<div>
+  <%= f.fields_for :video do |video_form| %>
+    <div class="form-group">
+      <%= video_form.label :link %>
+      <%= video_form.text_field :link, class: 'form-control', required: true %>
+      <span class="help-block">A link to the video on YouTube.</span>
+    </div>
+
+  <% end %>
+
+</div>
 
  <div id="widget"></div>
  <div id="player"></div>
@@ -93,7 +102,7 @@
 
       // 4. This function is called when a video has been successfully uploaded.
       function onUploadSuccess(event) {
-        $('#post_youtube_id').val(event.data.videoId);
+        $('#post_video_attributes_link').val(event.data.videoId);
       }
 
       // 5. This function is called when a video has been successfully processed.

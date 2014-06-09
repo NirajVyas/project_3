@@ -3,26 +3,34 @@
 # Table name: videos
 #
 #  id         :integer          not null, primary key
-#  title      :string(255)
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  link       :string(255)
-#  uid        :string(255)
-#  author     :string(255)
-#  duration   :string(255)
+#  link       :string
+#  uid        :string
+#  author     :string
+#  duration   :string
 #  likes      :integer
 #  dislikes   :integer
 #
 
 class Video < ActiveRecord::Base
+  belongs_to :post
+
   attr_accessible :link
 
-  YT_LINK_FORMAT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
+  YT_LINK_FORMAT = /(^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*|[^#\&\?]*.)/i
 
   before_create -> do
     uid = link.match(YT_LINK_FORMAT)
 
-    self.uid = uid[2] if uid && uid[2]
+    if uid
+      if uid[3]
+        self.uid = uid[3] 
+      else
+        self.uid = uid[1]
+      end
+    end
 
     if self.uid.to_s.length != 11
       self.errors.add(:link, 'is invalid.')
