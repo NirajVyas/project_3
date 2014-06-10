@@ -54,10 +54,39 @@
   <div id="tab2">
     <h2>Pictures</h2>
      <div class="field">
-    <%= f.label :photo_uploader %><br />
-    <%= f.file_field :photo_uploader, :multiple => true %>
+        <%= f.label :photo_uploader %><br />
+        <%= f.file_field :photo_uploader, :multiple => true %>
+     </div>
   </div>
-  </div>
+
+<h1>jQuery Uploads</h1>
+
+    <form id="form1" runat="server">
+        <input type="file" id="imgInp"/>
+        <img id="target_imgInp" src="#" alt="your image" class="thumb" height="200px"/>
+        <input type="file" id="large1" />
+        <img id="target_large1" src="#" alt="your image 1" />
+        <input type="file" id="large2" />
+        <img id="target_large2" src="#" alt="your image 2" />
+    </form>
+<script>
+ function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();            
+            reader.onload = function (e) {
+
+               $("#target_"+$(input).attr("id")).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("input[type=file]").change(function(){
+        readURL(this);
+    });
+</script>
+
   <div id="tab3">
     <h2>Videos</h2>
     <p><%= link_to 'Add video now via YouTube Link', new_video_path, class: 'btn btn-primary btn-lg' %> <br /> </p>
