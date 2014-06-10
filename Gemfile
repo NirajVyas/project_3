@@ -9,14 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'carrierwave'
 gem 'youtube_it', '~> 2.4.0'
-gem 'best_in_place'
 
-group :development do 
-  gem 'pry-rails'
-  gem 'pry-byebug'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-end
 
 # Gems used only for assets and not required
 # in production environments by default.
