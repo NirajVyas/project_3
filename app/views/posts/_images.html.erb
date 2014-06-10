@@ -1,9 +1,6 @@
-<%= form_for([@blog, @post]) do |f| %>
 
  <h2>Pictures</h2>
      <div class="field">
     <%= f.label :photo_uploader %><br />
     <%= f.file_field :photo_uploader, :multiple => true %>
   </div>
-
-  <% end %>

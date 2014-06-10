@@ -2,45 +2,34 @@
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-<div class="wrapper">
+  <div class="wrapper">
 
-<ul class="tabs clearfix" data-tabgroup="first-tab-group">
-  <li><a href="#tab1" class="active">Blog</a></li>
-  <li><a href="#tab2">Images</a></li>
-  <li><a href="#tab3">Videos</a></li>
-</ul>
-<section id="first-tab-group" class="tabgroup">
-  <div id="tab1">
-    
-    <%= render 'blog' %>
+    <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+      <li><a href="#tab1" class="active">Blog</a></li>
+      <li><a href="#tab2">Images</a></li>
+      <li><a href="#tab3">Videos</a></li>
+    </ul>
 
-
+    <section id="first-tab-group" class="tabgroup">
+      <div id="tab1">
+        <%= render partial: 'blog', locals: { f: f } %>
+      </div>
+      <div id="tab2">
+        <%= render partial: 'images', locals: { f: f } %>
+      </div>
+      <div id="tab3">
+        <%= render partial: 'video', locals: { f: f } %>
+      </div>
+    </section>
   </div>
-  <div id="tab2">
-   
-<%= render 'images' %>
-
-
-  </div>
-
-  <div id="tab3">
-
-    <%= render 'video' %>
-
-
-  </div>
-
-</section>
-</div>
 
   <div class="actions">
     <%= f.submit %>
