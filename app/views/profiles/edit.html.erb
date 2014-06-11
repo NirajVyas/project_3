@@ -1,4 +1,4 @@
-<%= form_for :user do |f| %>
+<%= form_for current_user, url: profile_path, method: :put do |f| %>
 
   <div class="field">
     <%= f.label :display_name %><br />

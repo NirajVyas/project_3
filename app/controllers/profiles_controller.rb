@@ -6,7 +6,11 @@ class ProfilesController < ApplicationController
 
   def update
     @user = current_user
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to root_path, notice: 'Post was successfully updated.' }
+      end
+    end
   end
-
 
 end
