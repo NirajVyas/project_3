@@ -13,4 +13,8 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def index
+    @profiles = User.all
+  end
+
 end
