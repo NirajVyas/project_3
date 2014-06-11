@@ -1,5 +1,13 @@
 TravelApp::Application.routes.draw do
 
+  resources :farmers
+
+
+  get "welcome/index"
+
+  resources :donations
+
+
   resources :blogs do
     resources :posts
   end

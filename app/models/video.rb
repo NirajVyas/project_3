@@ -1,19 +1,3 @@
-# == Schema Information
-#
-# Table name: videos
-#
-#  id         :integer          not null, primary key
-#  title      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  link       :string
-#  uid        :string
-#  author     :string
-#  duration   :string
-#  likes      :integer
-#  dislikes   :integer
-#
-
 class Video < ActiveRecord::Base
   belongs_to :post
 

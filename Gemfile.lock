@@ -137,6 +137,7 @@ GEM
     webmock (1.18.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
+    wepay (0.0.3)
     youtube_it (2.4.0)
       builder
       excon
@@ -160,4 +161,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
+  wepay
   youtube_it (~> 2.4.0)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TravelAppqqqqq</title>
+  <title>TravelApp</title>
   
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -28,7 +28,11 @@
     <%= current_user.email %>
 
     <div id="dashboard"> Dashboard </div>
+
+    <%= link_to blogs_path do %>
       <div id="blogs"> Blogs </div>
+    <% end %>
+
       <div id="bloggers"> Bloggers </div>
       <div id="forum"> Forum </div>
       <div id="settings"> Settings </div>

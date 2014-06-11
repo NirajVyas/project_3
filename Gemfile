@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'devise'
 gem 'carrierwave'
 gem 'youtube_it', '~> 2.4.0'
+gem 'jquery-rails'
+gem 'wepay'
 
 
 # Gems used only for assets and not required

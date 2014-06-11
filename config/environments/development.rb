@@ -6,6 +6,11 @@ TravelApp::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  CLIENT_ID = 90514
+  CLIENT_SECRET = "82f96d01f0"
+  USE_STAGE = true
+  WEPAY = WePay.new(CLIENT_ID, CLIENT_SECRET, USE_STAGE)
+
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 

@@ -12,6 +12,16 @@
  *= require_tree .
  */
 
+@media (min-width: 767px) {
+body { padding-top: 60px; }
+}
+
+a.btn { color: #FFF; }
+a.btn:visited { color: #FFF; }
+
+div.navbar div.container a { color: #EEE}
+
+
  .yt_video {
   max-width: 320px;
   margin-left: auto;
