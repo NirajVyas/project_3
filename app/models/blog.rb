@@ -1,4 +1,5 @@
 class Blog < ActiveRecord::Base
   has_many :posts
-  attr_accessible :date, :description, :title
+  belongs_to :user
+  attr_accessible :date, :description, :title, :user_id
 end

@@ -1,31 +1,45 @@
-<h1>Listing donations</h1>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span class="icon-bar">
+  <span class="icon-bar">
+  <span class="icon-bar">
+</button>
+<%= link_to 'WeFarm', root_path, :class => 'brand' %>
+<div class="nav-collapse collapse">                 
+  <ul class="nav pull-right">
+    <li>
+      <%= link_to 'Register' %>
+    </li>
+    <li>
+      <%= link_to 'Login' %>
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Amount</th>
-    <th>Picture</th>
-    <th>Video</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="container">
 
-<% @donations.each do |donation| %>
-  <tr>
-    <td><%= donation.title %></td>
-    <td><%= donation.body %></td>
-    <td><%= donation.amount %></td>
-    <td><%= donation.picture %></td>
-    <td><%= donation.video %></td>
-    <td><%= link_to 'Show', donation %></td>
-    <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
-    <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div class="row-fluid">
+<div class="span8">
+<% if flash.notice %>
+  <div class="alert alert-block alert-info">
+    <button type="button" class="close" data-dismiss="alert">×
+    <%= flash.notice %>
+  </div>
 <% end %>
-</table>
+<% if flash.alert %>
+  <div class="alert alert-block alert-error">
+    <button type="button" class="close" data-dismiss="alert">×
+    <%= flash.alert %>
+  </div>
+<% end %>               
+</div>
+</div>
 
-<br />
+<%= yield %>
 
-<%= link_to 'New Donation', new_donation_path %>
+</div>
