@@ -11,11 +11,6 @@
 </p>
 
 <p>
-  <b>Password hash:</b>
-  <%= @farmer.password_hash %>
-</p>
-
-<p>
   <b>Farm:</b>
   <%= @farmer.farm %>
 </p>
@@ -30,15 +25,7 @@
   <%= @farmer.produce_price %>
 </p>
 
-<p>
-  <b>Wepay access token:</b>
-  <%= @farmer.wepay_access_token %>
-</p>
 
-<p>
-  <b>Wepay account:</b>
-  <%= @farmer.wepay_account_id %>
-</p>
 
 
 <%= link_to 'Edit', edit_farmer_path(@farmer) %> |
