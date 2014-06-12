@@ -1,9 +1,13 @@
 TravelApp::Application.routes.draw do
 
   resources :farmers
+  resource :profile, only: [:edit, :update]
 
+  get "profiles/index"
 
   get "welcome/index"
+
+
 
   resources :donations
 
