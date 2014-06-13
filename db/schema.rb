@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140613084725) do
+ActiveRecord::Schema.define(:version => 20140613095625) do
 
   create_table "blogs", :force => true do |t|
     t.string   "date"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(:version => 20140613084725) do
     t.boolean  "comments"
     t.boolean  "public"
   end
+
+  create_table "marks", :id => false, :force => true do |t|
+    t.integer  "marker_id"
+    t.string   "marker_type"
+    t.integer  "markable_id"
+    t.string   "markable_type"
+    t.string   "mark",          :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "marks", ["markable_id", "markable_type", "mark"], :name => "index_marks_on_markable_id_and_markable_type_and_mark"
+  add_index "marks", ["marker_id", "marker_type", "mark"], :name => "index_marks_on_marker_id_and_marker_type_and_mark"
 
   create_table "posts", :force => true do |t|
     t.string   "title"

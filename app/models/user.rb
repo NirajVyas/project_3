@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  acts_as_marker
+   markable_as :favorite
   has_many :blogs
   has_many :posts
   # Include default devise modules. Others available are:
@@ -10,3 +12,4 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :display_name, :bio, :public
   # attr_accessible :title, :body
 end
+  
