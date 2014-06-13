@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
     @posts = Post.find_all_by_blog_id(params[:id])
+    @count = current_user.blogs.count
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @blog }

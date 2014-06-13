@@ -4,30 +4,22 @@
 
  <%= link_to "New Blog", new_blog_path %>
 
- 
-
  <%= link_to "View Blog", blogs_path %>
 
+  <div class="profile">
 
-<div class="profile">
+  </div>
 
+  <div class="user_profile">  
 
-</div>
+    <%= link_to edit_profile_path do %>
+      <div id="edit_profile"> Edit Profile </div>
+    <% end %>
 
-<div class="user_profile">  
-
-   <%= link_to edit_profile_path do %>
-
-  <div id="edit_profile"> Edit Profile </div>
-
-  <% end %>
-
-    <p><%= current_user.display_name %>  </p>
-  <p>  <%= current_user.bio %>  </p>
-   <p> <%= current_user.public %>  </p>
-
-
-
-</div>
+     <p><b>Display Name: </b> <%= current_user.display_name %> </p>
+     <p> <%= current_user.bio %> </p>
+     <p> <%= current_user.public %> </p>
+ 
+  </div>
 
 
