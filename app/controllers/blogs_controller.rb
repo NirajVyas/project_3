@@ -3,7 +3,6 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
-    # @blogs = current_user.blogs
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @blogs }
@@ -42,7 +41,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(params[:blog])
-
+    @blog.user = current_user
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -81,4 +80,10 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def user_blog
+    @blogs = current_user.blogs
+    render action: "index"
+  end
+
 end

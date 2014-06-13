@@ -4,7 +4,7 @@
 
  <%= link_to "New Blog", new_blog_path %>
 
- <%= link_to "View Blog", blogs_path %>
+ <%= link_to "View Blog",  blogs_user_blog_path %>
 
   <div class="profile">
 
@@ -19,6 +19,8 @@
      <p><b>Display Name: </b> <%= current_user.display_name %> </p>
      <p> <%= current_user.bio %> </p>
      <p> <%= current_user.public %> </p>
+
+ 
  
   </div>
 
