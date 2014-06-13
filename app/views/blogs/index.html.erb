@@ -16,6 +16,8 @@
    <p><%= blog.title %></p>
   <p> <%= blog.description %></p>
 
+        <%= render partial: 'favorite_form', locals: {:blog => blog}  %>
+
 
    <%= link_to 'Show ', blog %>
    <%= link_to ' Edit ', edit_blog_path(blog) %>

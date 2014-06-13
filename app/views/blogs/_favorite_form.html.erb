@@ -1,0 +1,5 @@
+<% if current_user.favorite_blogs.include?(Blog.find(blog.id)) %>
+  <%= render partial: '/blogs/unfavorite', locals: {:blog => blog} %>  
+<% else %>
+  <%= render partial: '/blogs/favorite', locals: {:blog => blog} %>  
+<% end %>

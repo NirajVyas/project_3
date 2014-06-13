@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_marker
+  
   has_many :blogs
   has_many :posts
   # Include default devise modules. Others available are:

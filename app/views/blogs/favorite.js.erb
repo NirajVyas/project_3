@@ -1,1 +1,3 @@
-favorite.js.erb
+var blogHtml =  "<%= escape_javascript(render partial: '/blogs/favorite_form' ) %>"
+
+$('#fav-button').html(blogHtml)
