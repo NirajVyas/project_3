@@ -11,17 +11,17 @@
   </tr>
 
 <% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.date %></td>
-    <td><%= blog.title %></td>
-    <td><%= blog.description %></td>
+  
+  <p> <%= blog.date %></p>
+   <p><%= blog.title %></p>
+  <p> <%= blog.description %></p>
 
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+   <%= link_to 'Show ', blog %>
+   <%= link_to ' Edit ', edit_blog_path(blog) %>
+   <%= link_to ' Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
   </tr>
 <% end %>
-</table>
 <br />
 
 <%= link_to 'New Blog', new_blog_path %>
