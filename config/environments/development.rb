@@ -6,8 +6,8 @@ TravelApp::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  CLIENT_ID = 90514
-  CLIENT_SECRET = "82f96d01f0"
+  CLIENT_ID = 151797
+  CLIENT_SECRET = "eb5d436121"
   USE_STAGE = true
   WEPAY = WePay.new(CLIENT_ID, CLIENT_SECRET, USE_STAGE)
 

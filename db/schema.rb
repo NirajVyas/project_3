@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140611160511) do
+ActiveRecord::Schema.define(:version => 20140613084725) do
 
   create_table "blogs", :force => true do |t|
     t.string   "date"
@@ -20,30 +20,8 @@ ActiveRecord::Schema.define(:version => 20140611160511) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
-  end
-
-  create_table "donations", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.float    "amount"
-    t.string   "picture"
-    t.string   "video"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.text     "message"
-  end
-
-  create_table "farmers", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_hash"
-    t.text     "farm"
-    t.text     "produce"
-    t.integer  "produce_price"
-    t.string   "wepay_access_token"
-    t.integer  "wepay_account_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.boolean  "comments"
+    t.boolean  "public"
   end
 
   create_table "posts", :force => true do |t|

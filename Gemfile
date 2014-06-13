@@ -10,7 +10,10 @@ gem 'devise'
 gem 'carrierwave'
 gem 'youtube_it', '~> 2.4.0'
 gem 'jquery-rails'
+gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
+gem 'best_in_place'
 gem 'wepay'
+gem 'markable'
 
 
 # Gems used only for assets and not required

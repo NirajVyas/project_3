@@ -1,23 +1,19 @@
 TravelApp::Application.routes.draw do
 
-  resources :farmers
   resource :profile, only: [:edit, :update]
 
   get "profiles/index"
 
-  get "welcome/index"
+  get "sessions/new"
 
-
-
-  resources :donations
-
-
+  get "blogs/user_blog", to: "blogs#user_blog"
   resources :blogs do
     resources :posts
   end
 
-  resources :videos, only: [:index, :new, :create]
 
+
+  resources :videos, only: [:index, :new, :create]
 
   devise_for :users
 
