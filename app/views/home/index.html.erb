@@ -26,7 +26,10 @@
      <p> <%= current_user.bio %> </p>
      <p> Account public status: <%= current_user.public %> </p>
       <%= image_tag current_user.profile_image.url %>
-
+       <%= current_user.city %> 
+       <%= current_user.latitude %> 
+       <%= current_user.longitude %> 
+ 
     <p><b>Following:</b></p>
     <p><b> Followers: </p>
   </div>
@@ -40,13 +43,8 @@
 </div>
 
 <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+  <div id="map" style='width: 800px; height: 400px;'>s</div>
 </div>
-
- <div style='width: 800px;'>
-    <div id="geolocation" style='width: 800px; height: 400px;'></div>
-  </div>
-
 
 <script> 
 
@@ -54,14 +52,17 @@ handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers([
     {
-      "lat": 12,
-      "lng": 2,
+      "lat": <%= current_user.latitude %> 
+,
+      "lng": <%= current_user.longitude %> 
+,
       "picture": {
         "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
         "width":  36,
         "height": 36
       },
-      "infowindow": "hello!"
+      "infowindow": "<%= current_user.city %>"
+
     }
   ]);
 
@@ -74,7 +75,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
         "width":  36,
         "height": 36
       },
-      "infowindow": "hello!"
+      "infowindow": "<%= current_user.city %>"
     }
   ]);
 
