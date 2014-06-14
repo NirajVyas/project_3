@@ -9,20 +9,25 @@
     <th></th>
     <th></th>
   </tr>
+</table>
 
 <% @blogs.each do |blog| %>
-  
+  <div class="user_blog">
+
   <p> <%= blog.date %></p>
    <p><%= blog.title %></p>
   <p> <%= blog.description %></p>
 
+
         <%= render partial: 'favorite_form', locals: {:blog => blog}  %>
 
+        <%= render partial: 'follow_form', locals: {:user => blog.user } if blog.user %>
 
    <%= link_to 'Show ', blog %>
    <%= link_to ' Edit ', edit_blog_path(blog) %>
    <%= link_to ' Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </tr>
+ </div>
+
 <% end %>
 <br />
 

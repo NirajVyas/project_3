@@ -3,9 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .unfavorite-button {
-  content: url(/assets/user-4-remove.png);
+  content: url(/assets/minus.png);
+  max-width: 100px;
+
 }
 
 .favorite-button {
+  content: url(/assets/plus.png);
+  max-width: 100px;
+}
+
+.unfollow-button {
   content: url(/assets/user-4-add.png);
+}
+
+.follow-button {
+  content: url(/assets/user-4-remove.png);
 }

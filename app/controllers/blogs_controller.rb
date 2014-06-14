@@ -86,4 +86,5 @@ class BlogsController < ApplicationController
     render action: "index"
   end
 
+
 end

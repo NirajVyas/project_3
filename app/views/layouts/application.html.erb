@@ -5,49 +5,132 @@
   
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "foundation" %>
+  <script src="/javascripts/foundation.min.js"></script>
+  <script src="/js/foundation.dropdown.js"></script>
+
 
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
 <script src="https://www.google.com/jsapi"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
   
    </head>
 <body>
 
-    <div id="topbar"> 
-    <div id="logo"> </div>
 
   </div> 
+  <div class="fixed">
+
+    <nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+
+      <% if current_user %>
+        <h1>Logged in as <%= current_user.email %></h1>
+      <%end%>
+
+      <h1><a href="#">My Site</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+    <% if current_user %>
+          <li class="active"><%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <li class="active"><a href="#">Sign Up</a></li>
+    <% end %>
+      <li class="has-dropdown">
+    <% if current_user %>
+      <a href="#">Settings</a>
+    <% else %>
+        <a href="#">login</a>
+    <% end %>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+        <% if current_user %>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="<%= blogs_path %>">Blogs</a></li>
+            <li><a href="<%= profiles_index_path %>">Bloggers</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+      <% end %> 
+  </section>
 
 <div class='login'>
   <% if current_user %>
-    <%= current_user.email %>
-
-      <div id="dashboard"> Dashboard </div>
-
-    <%= link_to blogs_path do %>
-      <div id="blogs"> Blogs </div>
-    <% end %>
-
-    <%= link_to profiles_index_path do %>
-        <div id="bloggers"> Bloggers </div>
-    <% end %>
-
-      <div id="forum"> Forum </div>
-      <div id="settings"> Settings </div>
+ 
         <div id="sign-out-button"> Sign Out </div>
 
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
   <% else %>      
 
-    <div id="why"> Why travel blogger? </div>
-    <div id="sign-in-button"> Sign Innnn </div>
-
-    <div id="beach"> </div>
-    <div id="blue">
-
   </div>
 </div>
+</nav>
+
+
+</div>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> d</p>
+
+<div id="slideshow">
+   <div>
+     <img src="http://farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg">
+   </div>
+   <div>
+     <img src="http://farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg">
+   </div>
+   <div>
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus viverra quam a mollis. Mauris ut pellentesque tellus. Fusce vel felis commodo, adipiscing massa sit amet, tempus massa. Duis non tempor erat. Morbi fermentum pulvinar nulla sed malesuada. In auctor, libero non aliquet ullamcorper, eros augue aliquet nulla, ut ornare enim nulla eu velit. Proin tincidunt dolor vel tellus egestas euismod. Integer faucibus sed quam a vehicula. Etiam tincidunt, purus at mattis feugiat, metus felis mattis augue, sit amet sodales sapien tellus at turpis. Praesent non quam blandit neque blandit gravida. Curabitur ac ornare nulla.
+
+   </div>
+</div>
+
+  <script>
+
+  $("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+
+</script>
+
+<a class="th [radius]" href="#">
+  <img src="http://images.forbes.com/media/lists/companies/google_200x200.jpg">
+</a>
+
+<a class="th [radius]" href="#">
+  <img src="http://images.forbes.com/media/lists/companies/google_200x200.jpg">
+</a>
+
+<a class="th [radius]" href="#">
+  <img src="http://images.forbes.com/media/lists/companies/google_200x200.jpg">
+</a>
+
+<a class="th [radius]" href="#">
+  <img src="http://images.forbes.com/media/lists/companies/google_200x200.jpg">
+</a>
 
     <div id="title"> Travel Blogger.</div>
    <div id="slogan"> A free travel blog - to capture and document all those special moments. </div>
@@ -79,7 +162,9 @@
 
 <%= yield %>
 
- 
+ <script>
+  $(document).foundation();
+</script>
 
 </body>
 </html>
