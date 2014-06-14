@@ -43,6 +43,7 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+
     <% if current_user %>
           <li class="active"><%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% else %>
@@ -204,6 +205,14 @@ setInterval(function() {
  <script>
   $(document).foundation();
 </script>
+
+<div id="footer"> 
+  <div id="social_icons">
+    <%= link_to(image_tag("Twitter.png", :alt => "home image", :width => 43, :height => 43, :title => "Click here to return to Home")) %>
+    <%= link_to(image_tag("Facebook.png", :alt => "home image", :width => 43, :height => 43, :title => "Click here to return to Home")) %>
+    <%= link_to(image_tag("GooglePlus.png", :alt => "home image", :width => 43, :height => 43, :title => "Click here to return to Home")) %>
+  </div>
+ </div>
 
 </body>
 </html>

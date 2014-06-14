@@ -12,6 +12,18 @@
  *= require_tree .
  */
 
+ #footer {
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  padding: 0.1px;
+ }
+
+ #social_icons {
+  margin-left: 30px;
+  margin-top: 10px;
+ }
+
 textarea {
     height: 300px;
 }
