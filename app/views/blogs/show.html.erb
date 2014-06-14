@@ -24,6 +24,7 @@
 <%= link_to 'New Post', new_blog_post_path(@blog) %>
 
 <% @posts.each do |post| %>
+
 <p><%= post.title %></p>
 <p><%= post.location %></p>
 <p><%= post.date %></p>
@@ -35,7 +36,10 @@
 <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
 <% end %>
 
-    <p> <%= link_to 'Edit', edit_blog_post_url(@blog, post) %> </p>
+    <p> <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> </p>
+    <td><%= link_to 'Destroy', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
 
 
 

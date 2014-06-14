@@ -15,6 +15,7 @@ gem 'best_in_place'
 gem 'wepay'
 gem 'markable'
 gem 'acts_as_commentable_with_threading'
+gem 'haml-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

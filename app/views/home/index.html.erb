@@ -1,4 +1,4 @@
-<a href="#" class="button expand">Hello <%= current_user.name %></a>
+<div class="white_text"><a href="#" class="button expand">Hello <%= current_user.name %></a></div>
 
 
 
@@ -9,7 +9,9 @@
 
  
 <div class="panel">
-  <h5>This is a regular panel.</h5>
+  <h5>Friends activity.</h5>
+    <%= @favourites %>
+
 </div>
 
 
@@ -28,7 +30,6 @@
     <p><b> Followers: </p>
   </div>
 </div>
-  <%= @favourites %>
 
 
 
