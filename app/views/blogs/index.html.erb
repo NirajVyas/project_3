@@ -1,23 +1,14 @@
 <h1>Listing blogs</h1>
 
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-</table>
-
 
 <% @blogs.each do |blog| %>
   <div class="user_blog">
+<hr>
+  <div class="placement_image"></div>
 
   <p> <%= blog.date %></p>
    <p><%= blog.title %></p>
-  <p> <%= blog.description %></p>
+  <div class="blog_description"> <%= blog.description %></p> </div>
 
   
 
