@@ -42,13 +42,52 @@
     <% if current_user %>
           <li class="active"><%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% else %>
-      <li class="active"><a href="#">Sign Up</a></li>
+      <li class="active"><a href="#" onclick="lightbox_open();">Sign Up</a></li>
+       <div id="light">
+         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div id="name"> <%= f.label :name %><br />
+          <%= f.text_field :name, :placeholder => "Name" %> </div>
+
+          <div id="email"><%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %></div>
+
+          <div id="password"><%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %></div>
+
+          <div id="password_confirmation"><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+          <div id="signupbutton"><%= f.submit "Sign up" %></div>
+         <% end %>
+      </div>
+      
     <% end %>
       <li class="has-dropdown">
     <% if current_user %>
       <a href="#">Settings</a>
     <% else %>
-        <a href="#">login</a>
+        <a href="#" onclick="lightbox_open();">login</a>
+        <div id="light">
+          <div class="signin-form">
+            <h2>Sign in</h2>
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div id="signin-email"><%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true %></div>
+
+                <div id="signin-password"><%= f.label :password %><br />
+                  <%= f.password_field :password, autocomplete: "off" %></div>
+
+                <% if devise_mapping.rememberable? -%>
+                  <div id="signin-checkbox"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+                <% end -%>
+                <div id="signin-signin"><%= f.submit "Sign in" %></div>
+              <% end %>
+          </div>
+        </div>
+
+        <div id="fade" onClick="lightbox_close();"></div> 
     <% end %>
         <ul class="dropdown">
           <li><a href="#">First link in dropdown</a></li>
@@ -67,6 +106,8 @@
           </ul>
       <% end %> 
   </section>
+
+
 
 <div class='login'>
   <% if current_user %>
