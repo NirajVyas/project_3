@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :blog
   has_one :video
+  acts_as_commentable
   attr_accessible :body, :date, :location, :stayed, :tags, :title, :photo_uploader, :video_attributes
   mount_uploader :photo_uploader, PhotoUploaderUploader
 
