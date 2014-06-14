@@ -3,4 +3,6 @@ Show Bloggers Page
 <% @profiles.each do |profile| %>
     <p><%= profile.display_name %> </p>  
     <p><%= profile.bio %>  </p>
+       <%= image_tag @user.profile_image.url%>
+
 <% end %>

@@ -4,6 +4,8 @@
 <% @profiles.each do |profile| %>
   <b> <p><%= profile.display_name %> </p>  </b>
   <i> <p><%= profile.bio %>  </p> </i>
+         <%= image_tag @user.profile_image.url%>
+
 
  <p> Blogs: <%= current_user.blogs.count %> </p>
  <p> Followers: </p>
