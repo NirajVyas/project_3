@@ -18,13 +18,17 @@
 <div id="blog_description">
     <%= f.text_area :description, :placeholder => "Description" %>
 </div>
-  <b>Blog:</b>
+  <div class="row">
+
+  <div class="large-6 columns">
+  <label>Blog:</label>
     <%= label :public, "Public" %>
     <%= f.radio_button :public, true , :checked => true , :value => true %>
 
     <%= label :public, "Private"%>
     <%= f.radio_button :public, false, :value => false %>
-
+  </div>
+</div>
 <div id="blog_comments">
    <b>Comments:</b>
     <%= label :comments, "Allow" %>
