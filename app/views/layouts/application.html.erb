@@ -9,17 +9,15 @@
   <script src="/javascripts/foundation.min.js"></script>
   <script src="/js/foundation.dropdown.js"></script>
 
-
   <%= csrf_meta_tags %>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
 <script src="https://www.google.com/jsapi"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
   
-   </head>
+</head>
+
 <body>
 
-
-  </div> 
   <div class="fixed">
 
     <nav class="top-bar" data-topbar>
@@ -62,13 +60,13 @@
           <div id="signupbutton"><%= f.submit "Sign up" %></div>
          <% end %>
       </div>
-      
+
     <% end %>
       <li class="has-dropdown">
     <% if current_user %>
       <a href="#">Settings</a>
     <% else %>
-        <a href="#" onclick="lightbox_open();">login</a>
+        <a href="#" onclick="lightbox_open();">Login</a>
         <div id="light">
           <div class="signin-form">
             <h2>Sign in</h2>
@@ -81,7 +79,7 @@
 
                 <% if devise_mapping.rememberable? -%>
                   <div id="signin-checkbox"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-                <% end -%>
+                <% end %>
                 <div id="signin-signin"><%= f.submit "Sign in" %></div>
               <% end %>
           </div>
@@ -123,11 +121,7 @@
 
 
 </div>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> d</p>
+
 
 <div id="slideshow">
    <div>
