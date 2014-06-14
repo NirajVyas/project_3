@@ -15,6 +15,7 @@
 //= require jquery.purr
 //= require best_in_place
 //= require foundation
+//= require gmaps/google
 //= require_tree .
 
 
