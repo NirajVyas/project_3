@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+textarea {
+    height: 300px;
+}
+
 @media (min-width: 767px) {
 body { padding-top: 60px; }
 }
