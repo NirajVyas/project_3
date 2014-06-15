@@ -19,7 +19,6 @@
 
   <%= image_tag @blog.blog_photo.url %>
 
-
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
 
@@ -27,31 +26,28 @@
 
 <% @posts.each do |post| %>
 
-<p><%= post.title %></p>
-<p><%= post.location %></p>
+  <p><%= post.title %></p>
+  <p><%= post.location %></p>
 
-<% if post.location %>
-<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
+    <% if post.location %>
+      <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
+    <% end %>
+
+  <p><%= post.date %></p>
+  <p><%= post.stayed %></p>
+  <p><%= post.tags %></p>
+  <p><%= post.body %></p>
+
+  <%= image_tag @blog.blog_photo.url %>
+
+  <% if post.video %>
+    <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
+  <% end %>
+
+  <p> <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> </p>
+  <td><%= link_to 'Destroy', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
 <% end %>
-
-<p><%= post.date %></p>
-<p><%= post.stayed %></p>
-<p><%= post.tags %></p>
-<p><%= post.body %></p>
-
-
-<% if post.video %>
-<iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
-<% end %>
-
-    <p> <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> </p>
-    <td><%= link_to 'Destroy', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-
-
-
-
-<p><% end %>
 
 
 

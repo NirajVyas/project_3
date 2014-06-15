@@ -24,6 +24,7 @@
     <td><%= post.body %></td>
     <td><%= post.latitude %></td>
     <td><%= post.longitude %></td>
+        <%= image_tag @post.blog_photo.url %>
 
     <td><%= link_to 'Show', blog_post_path(@blog, post) %></td>
     <td><%= link_to 'Edit', edit_blog_post_path(@blog, post) %></td>
