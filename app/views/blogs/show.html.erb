@@ -31,10 +31,9 @@
 
 <% @posts.each do |post| %>
 
-
   <p><div id="post_date"><%= post.date %></div></p>
-  <p><%= post.title %></p>
-  <p><%= post.location %></p>
+  <p><h3><div id="post_title"><%= post.title %></div></h3></p>
+  <p><div id="post_location"><%= post.location %></div></p>
 
     <% if post.location %>
       <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
