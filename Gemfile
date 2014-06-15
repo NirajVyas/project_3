@@ -7,7 +7,7 @@ gem 'rails', '3.2.18'
 
 gem 'sqlite3'
 gem 'devise'
-gem 'carrierwave'
+gem 'carrierwave', '= 0.9.0'
 gem 'youtube_it', '~> 2.4.0'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
@@ -16,6 +16,8 @@ gem 'wepay'
 gem 'markable'
 gem 'acts_as_commentable_with_threading'
 gem 'haml-rails'
+gem 'gmaps4rails'
+gem 'geocoder'
 
 # Gems used only for assets and not required
 # in production environments by default.

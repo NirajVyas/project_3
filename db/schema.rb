@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140614162809) do
+ActiveRecord::Schema.define(:version => 20140615111743) do
 
   create_table "blogs", :force => true do |t|
     t.string   "date"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20140614162809) do
     t.integer  "user_id"
     t.boolean  "comments"
     t.boolean  "public"
+    t.string   "blog_photo"
   end
 
   create_table "comments", :force => true do |t|
@@ -56,6 +57,9 @@ ActiveRecord::Schema.define(:version => 20140614162809) do
     t.datetime "updated_at",     :null => false
     t.integer  "blog_id"
     t.string   "photo_uploader"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "blog_photo"
   end
 
   create_table "users", :force => true do |t|
@@ -78,6 +82,10 @@ ActiveRecord::Schema.define(:version => 20140614162809) do
     t.string   "display"
     t.text     "public_bio"
     t.boolean  "public"
+    t.string   "profile_image"
+    t.string   "city"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
