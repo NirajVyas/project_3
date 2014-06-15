@@ -40,6 +40,26 @@
 
    <%= image_tag post.blog_photo.url%>
 
+   <section id="gallery">
+  <!-- thumbnail image wrapped in a link -->
+    <section class="item">
+        <a href="#img1">
+          <img src="http://media-cache-ec0.pinimg.com/736x/d6/f3/ea/d6f3ea3207ced5d18138680bee59f535.jpg">
+        </a>
+    </section>
+
+<!-- lightbox container hidden with CSS -->
+  <div class="lightbox" id="img1">
+      <div class="image">
+            <img src="http://media-cache-ec0.pinimg.com/736x/d6/f3/ea/d6f3ea3207ced5d18138680bee59f535.jpg">
+                <div class="info">
+                <a href="#img3" class="prev">Prev</a>
+                <a href="#" class="close">Close</a>
+                <a href="#img2" class="next">Next</a>
+            </div>
+        </div>
+    </div>
+  
 
   <% if post.video %>
     <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
