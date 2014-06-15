@@ -2,6 +2,9 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
+    @search = Blog.search(params[:q])
+    @blogs = @search.result
+
     if params[:tag]
       @blogs = Blog.tagged_with(params[:tag])
       else

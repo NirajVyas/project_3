@@ -5,12 +5,6 @@
   <div class="field">
     <%= f.text_field :location, :placeholder =>"Location" %>
   </div>
-  <div class="field">
-    <%= f.text_field :latitude, :placeholder =>"latitude" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :longitude, :placeholder =>"longitude" %>
-  </div>
 
   <div class="field">
     <%= f.text_field :date, :placeholder =>"Date" %>
@@ -21,7 +15,5 @@
   <div class="field">
     <%= f.text_field :tags, :placeholder =>"Tags, seperate by comma (,)" %>
   </div>
-
-  <div class="field">
+  
     <%= f.text_area :body, :rows => "5", :cols => 10, :placeholder =>"Your post", :id => "edit" %>
-  </div>

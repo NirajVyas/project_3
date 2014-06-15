@@ -6,12 +6,21 @@
   <% end %>
 </div>
 
+<%= search_form_for @search do |f| %>
+      <p>
+        <%= f.text_field :title_cont, :placeholder => "Title contains" %>
+      </p>
+      
+        <%= f.submit %>
+      </p>
+    <% end %>
+
 
 <% @blogs.each do |blog| %>
   <div class="user_blog">
 <hr style="height:3px;border:none;color:#333;background-color:#333;" />
    <div id="post_date"><%= blog.date %></div>
-
+   
    <h1><div id="post_title1"><%= blog.title %></div></h1>
 
 <table>
