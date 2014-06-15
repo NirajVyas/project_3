@@ -2,27 +2,32 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Date:</b>
-  <%= @blog.date %>
+<div id="blog_title"><p>
+  <h2><%= @blog.title %></h2>
 </p>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @blog.title %>
+
+<div class="blog_date">  <p>
+  <hr><h3><%= @blog.date %></h3>
 </p>
+</div>
 
-<p>
-  <b>Description:</b>
+
+<div id="blog_description">  <p>
   <%= @blog.description %>
 </p>
+</div>
 
-  <%= image_tag @blog.blog_photo.url %>
-
+<div class= "edit_blog">
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
-
+<%= link_to 'Back', blogs_path %> |
 <%= link_to 'New Post', new_blog_post_path(@blog) %>
+</div>
+
+<hr>
+
+
 
 <% @posts.each do |post| %>
 
@@ -37,9 +42,9 @@
   <p><%= post.stayed %></p>
   <p><%= post.tags %></p>
   <p><%= post.body %></p>
-
-   <%= image_tag post.blog_photo.url%>
-
+  <p><%= image_tag post.blog_photo.url%></p>
+  
+<p>
    <section id="gallery">
   <!-- thumbnail image wrapped in a link -->
     <section class="item">
@@ -59,11 +64,11 @@
             </div>
         </div>
     </div>
-  
+</p>
 
-  <% if post.video %>
+  <p><% if post.video %>
     <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
-  <% end %>
+  <% end %></p>
 
   <p> <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> </p>
   <td><%= link_to 'Destroy', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#blog_title {
+  text-align: center;
+  font-family: "Gentium Basic", serif !important;
+  font-style: italic !important;
+}
+
+.blog_date {
+  text-align: center;
+}
+
+.edit_blog {
+  text-align: center;
+}
+
+#blog_description {
+  text-align: center;
+}
+
 .unfavorite-button {
   content: url(/assets/unfollow.png);
   max-width: 100px;
