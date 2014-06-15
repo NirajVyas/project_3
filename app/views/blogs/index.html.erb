@@ -3,19 +3,20 @@
 
 <% @blogs.each do |blog| %>
   <div class="user_blog">
-<hr>
+<hr style="height:3px;border:none;color:#333;background-color:#333;" />
    <div id="post_date"><%= blog.date %></div>
 
-   <h3><div id="post_title1"><%= blog.title %></div></h3>
+   <h1><div id="post_title1"><%= blog.title %></div></h1>
 
+<table>
   <div class="blogs_listing_image"> 
-    <%= image_tag blog.blog_image.thumb.url %>
+   <td width="200px"> <%= image_tag blog.blog_image.thumb.url %> </td>
   </div>
 
   <div class="blog_description">
-     <%= raw blog.description %>
+    <td> <%= raw blog.description %> </td>
   </div>
-
+</table>
   
 
         <%= render partial: 'favorite_form', locals: {:blog => blog}  %>
