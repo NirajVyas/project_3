@@ -33,6 +33,8 @@
 <p><%= post.stayed %></p>
 <p><%= post.tags %></p>
 <p><%= post.body %></p>
+<p><%= post.latitude %></p>
+<p><%= post.longitude %></p>
 
 <% if post.video %>
 <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>

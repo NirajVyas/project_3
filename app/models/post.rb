@@ -7,5 +7,6 @@ class Post < ActiveRecord::Base
   attr_accessible :body, :date, :location, :stayed, :tags, :title, :photo_uploader, :video_attributes, :latitude, :longitude
   mount_uploader :photo_uploader, PhotoUploaderUploader
   geocoded_by :location
+  after_validation :geocode
   accepts_nested_attributes_for :video
 end
