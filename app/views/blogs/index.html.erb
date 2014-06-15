@@ -4,11 +4,17 @@
 <% @blogs.each do |blog| %>
   <div class="user_blog">
 <hr>
-<div class="blogs_listing_image"> <%= image_tag blog.blog_image.thumb.url %> </div>
+   <div id="post_date"><%= blog.date %></div>
 
-  <p> <%= blog.date %></p>
-   <p><%= blog.title %></p>
-  <div class="blog_description"> <%= raw blog.description %></p> </div>
+   <h3><div id="post_title1"><%= blog.title %></div></h3>
+
+  <div class="blogs_listing_image"> 
+    <%= image_tag blog.blog_image.thumb.url %>
+  </div>
+
+  <div class="blog_description">
+     <%= raw blog.description %>
+  </div>
 
   
 
