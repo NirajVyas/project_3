@@ -3,6 +3,8 @@ class Blog < ActiveRecord::Base
   has_many :posts
   belongs_to :user
   mount_uploader :blog_photo, BlogPhotoUploader
-  attr_accessible :date, :description, :title, :user_id, :comments, :public, :blog_photo
+  mount_uploader :blog_image, BlogImageUploader
+
+  attr_accessible :date, :description, :title, :user_id, :comments, :public, :blog_photo, :blog_image
 end
 
