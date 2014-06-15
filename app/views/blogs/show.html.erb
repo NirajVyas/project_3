@@ -15,7 +15,7 @@
 
 
 <div id="blog_description">  <p>
-  <%= @blog.description %>
+  <%= raw @blog.description %>
 </p>
 </div>
 
@@ -31,6 +31,8 @@
 
 <% @posts.each do |post| %>
 
+
+  <p><div id="post_date"><%= post.date %></div></p>
   <p><%= post.title %></p>
   <p><%= post.location %></p>
 
@@ -38,7 +40,6 @@
       <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
     <% end %>
 
-  <p><%= post.date %></p>
   <p><%= post.stayed %></p>
   <p><%= post.tags %></p>
   <p><%= post.body %></p>
