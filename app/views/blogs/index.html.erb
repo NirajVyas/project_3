@@ -17,6 +17,10 @@
     <td> <%= raw blog.description %> </td>
   </div>
 </table>
+
+  <p>
+    Tags: <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+  </p>
   
 
         <%= render partial: 'favorite_form', locals: {:blog => blog}  %>

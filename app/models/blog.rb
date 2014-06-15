@@ -5,6 +5,8 @@ class Blog < ActiveRecord::Base
   mount_uploader :blog_photo, BlogPhotoUploader
   mount_uploader :blog_image, BlogImageUploader
 
-  attr_accessible :date, :description, :title, :user_id, :comments, :public, :blog_photo, :blog_image
+  acts_as_taggable
+
+  attr_accessible :date, :description, :title, :user_id, :comments, :public, :blog_photo, :blog_image, :tag_list
 end
 
