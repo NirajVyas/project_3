@@ -7,12 +7,10 @@
 </p>
 </div>
 
-
 <div class="blog_date">  <p>
   <hr><h3><%= @blog.date %></h3>
 </p>
 </div>
-
 
 <div id="blog_description">  <p>
   <%= raw @blog.description %>
@@ -27,17 +25,17 @@
 
 <hr>
 
-
-
 <% @posts.each do |post| %>
 
   <p><div id="post_date"><%= post.date %></div></p>
-  <h3><div id="post_title"><%= post.title %></div></h3>
-  <div id="post_location"><%= post.location %></div>
+  <h3><div id="post_title1"><%= post.title %></div></h3>
+  <div id="post_location1"><%= post.location %></div>
 
-    <% if post.location %>
-      <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
-    <% end %>
+   <div class="post_location1">
+      <% if post.location %>
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
+      <% end %>
+   </div>
 
   <p><%= post.stayed %></p>
   <p><%= post.tags %></p>
@@ -65,7 +63,9 @@
         </div>
     </div>
 </p>
-
+<br />
+<br />
+<br />
   <p><% if post.video %>
     <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
   <% end %></p>

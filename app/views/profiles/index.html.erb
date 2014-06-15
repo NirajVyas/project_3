@@ -1,11 +1,12 @@
 
-<p>HELLO</p>
 
 <% @profiles.each do |profile| %>
   <b> <p><%= profile.display_name %> </p>  </b>
   <i> <p><%= profile.bio %>  </p> </i>
 
- <p> Blogs: <%= current_user.blogs.count %> </p>
+    <p><%= image_tag profile.profile_image.url%></p>
+
+ <p> Blogs: <%= @profiles.count %> </p>
  <p> Followers: </p>
  <p> Following: </p>
  <p> Rep: </p>

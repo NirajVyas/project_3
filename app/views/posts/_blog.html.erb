@@ -1,3 +1,4 @@
+
   <div class="field">
     <%= f.text_field :title, :placeholder =>"Title" %>
   </div>
@@ -20,6 +21,7 @@
   <div class="field">
     <%= f.text_field :tags, :placeholder =>"Tags, seperate by comma (,)" %>
   </div>
+
   <div class="field">
-    <%= f.text_area :body, :placeholder =>"Your post" %>
+    <%= f.text_area :body, :rows => "5", :cols => 10, :placeholder =>"Your post", :id => "edit" %>
   </div>
