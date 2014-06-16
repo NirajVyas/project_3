@@ -16,33 +16,33 @@
 
 <% @blogs.each do |blog| %>
   <div class="user_blog">
-<hr style="height:3px;border:none;color:#333;background-color:#333;" />
-   <div id="post_date"><%= blog.date %></div>
-   
-   <h1><div id="post_title1"><%= blog.title %></div></h1>
+    <hr style="height:3px;border:none;color:#333;background-color:#333;" />
+    <div id="post_date"><%= blog.date %></div>
 
-<table>
-  <div class="blogs_listing_image"> 
-   <td width="200px"> <%= image_tag blog.blog_image.thumb.url %> </td>
+    <h1><div id="post_title1"><%= blog.title %></div></h1>
+
+    <table>
+      <div class="blogs_listing_image"> 
+       <td width="200px"> <%= image_tag blog.blog_image.thumb.url %> </td>
+      </div>
+
+      <div class="blog_description">
+        <td> <%= raw blog.description %> </td>
+      </div>
+    </table>
+
+    <p>
+      Tags: <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+    </p>
+    
+    <div id='favorite-form-<%=blog.id%>'>
+      <%= render partial: 'favorite_form', locals: {:blog => blog}  %>
+    </div>
+         
+    <%= link_to 'Show ', blog %>
+    <%= link_to ' Edit ', edit_blog_path(blog) %>
+    <%= link_to ' Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
-
-  <div class="blog_description">
-    <td> <%= raw blog.description %> </td>
-  </div>
-</table>
-
-  <p>
-    Tags: <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-  </p>
-  
-
-        <%= render partial: 'favorite_form', locals: {:blog => blog}  %>
-
-       
-   <%= link_to 'Show ', blog %>
-   <%= link_to ' Edit ', edit_blog_path(blog) %>
-   <%= link_to ' Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
- </div>
 
 <% end %>
 <br />

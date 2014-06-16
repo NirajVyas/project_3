@@ -1,3 +1,3 @@
-var blogHtml =  "<%= escape_javascript(render partial: '/blogs/favorite_form' ) %>"
+var blogHtml =  "<%= escape_javascript(render partial: '/blogs/favorite_form', locals: {:blog => @blog} ) %>";
 
-$('#fav-button').html(blogHtml)
+$('#favorite-form-<%= @blog.id %>').html(blogHtml);

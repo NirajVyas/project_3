@@ -10,7 +10,9 @@
  
 <div class="panel">
   <h5>Friends activity.</h5>
-    <%= @favourites %>
+    <% current_user.favourites.each do |favourite| %>
+      <%= favourite.name %>
+      <% end %>
 
 </div>
 

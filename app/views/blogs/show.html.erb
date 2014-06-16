@@ -41,7 +41,6 @@
   <p><%= raw post.body %></p>
 
     <% post.images.each do |image| %>
-<p>
         <a href="<%= image.photo_file %>" data-lightbox="roadtrip">Image</a>
     <% end %>
 
@@ -63,25 +62,12 @@
 
     <%= f.submit %>
   <% end %>
-<hr style="height:3px;border:none;color:#333;background-color:#333;" />
 
-<!-- 
-   <div class="event">
-    <h1>
-      <%#= @event.name %>
-    </h1>
-  </div>
-        <h2> Comments </h2>
-        <%#= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
-        <%#= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+  
 
-
- -->
+  <hr style="height:3px;border:none;color:#333;background-color:#333;" />
 
 <% end %>
 
 
 
-<!-- #render partial: 'posts/show'
- -->
- 

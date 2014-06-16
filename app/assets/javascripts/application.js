@@ -16,6 +16,9 @@
 //= require best_in_place
 //= require foundation
 //= require gmaps/google
+//= require underscore-min
+//= require lightbox.min
+//= require foundation.min
 //= require_tree .
 
 

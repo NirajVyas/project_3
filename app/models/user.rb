@@ -17,5 +17,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :display_name, :bio, :public, :profile_image, :city, :latitude, :longitude, :display, :public_bio
   # attr_accessible :title, :body
+
+  def favourites
+    favorite_blogs.map(&:user).uniq
+  end
+
 end
   
