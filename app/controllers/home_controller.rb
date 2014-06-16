@@ -3,7 +3,11 @@ class HomeController < ApplicationController
 
   def index
     @favourites = current_user.favorite_blogs
+    @city = City.new
+    @cities = City.all
   end
+
+
 
 
 end

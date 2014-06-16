@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
 
   geocoded_by :city
   # after_validation :geocode, :if => :address_changed?
-
+  has_many :city
+  
+  
   has_many :blogs
   has_many :posts
   # Include default devise modules. Others available are:

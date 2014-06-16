@@ -28,7 +28,6 @@
      <p> <%= current_user.public_bio %> </p>
      <p> Account public status: <%= current_user.public %> </p>
       <%= image_tag current_user.profile_image.url %>
-       <%= current_user.city %> 
        <%= current_user.latitude %> 
        <%= current_user.longitude %> 
  
@@ -42,6 +41,26 @@
   <div id="multi_markers" style='width: 800px; height: 400px;'></div>
 </div>
     
+
+<%= form_for @city do |f| %>
+
+  <div class="field">
+    <%= f.text_field :city, :placeholder => "City" %>
+  </div>
+  
+
+  <%= f.submit %>
+
+<% end %>
+
+
+<% @cities.each do |city| %>
+  <li><%= city.city %></li>
+  <li><%= city.latitude %></li>
+  <li><%= city.longitude %></li>
+
+<% end %>
+ 
 
 <script>
 
@@ -80,7 +99,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
         "width":  36,
         "height": 36
       },
-      "infowindow": "<%= current_user.city %>"
+      "infowindow": ""
 
     }
   ]);
@@ -94,7 +113,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
         "width":  36,
         "height": 36
       },
-      "infowindow": "<%= current_user.city %>"
+      "infowindow": ""
     }
   ]);
 
