@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   mount_uploader :profile_image, ProfileImageUploader
 
   geocoded_by :city
-  after_validation :geocode, :if => :address_changed?
+  # after_validation :geocode, :if => :address_changed?
 
   has_many :blogs
   has_many :posts

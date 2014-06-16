@@ -49,10 +49,12 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    images = params[:post].delete(:photo_file) 
     @post = Post.new(params[:post])
     @post.blog = @blog
     respond_to do |format|
       if @post.save
+        @post.create_images(images)
         format.html { redirect_to @post.blog, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
@@ -89,9 +91,15 @@ class PostsController < ApplicationController
     end
   end
 
+
+
   private
   def load_blog
     @blog = Blog.find(params[:blog_id])
+  end
+
+  def  def create_images
+
   end
 
 end

@@ -39,8 +39,9 @@
   <p><%= post.stayed %></p>
   <p><%= post.tags %></p>
   <p><%= raw post.body %></p>
-  <p><%= image_tag post.blog_photo.url%></p>
-  
+    <% post.images.each do |image| %>
+  <p><%= image_tag image.photo_file %></p>
+    <% end %>
 <p>
    <section id="gallery">
   <!-- thumbnail image wrapped in a link -->
@@ -75,8 +76,8 @@
   <%= form_for build_comment_for_post(post) do |f| %>
     <%= f.hidden_field :commentable_type %>
     <%= f.hidden_field :commentable_id %>
-    <%= f.text_field :title %>
-    <%= f.text_area :body %>
+    <%= f.text_field :title, :placeholder => "Title" %>
+    <%= f.text_area :body, :rows => 3, :placeholder => "Comment" %>
 
     <%= f.submit %>
   <% end %>
