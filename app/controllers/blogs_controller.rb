@@ -19,6 +19,11 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+
+    @blog = Blog.find(params[:id])
+    #@comments = @blog.comment_threads.order('created_at desc')
+    #@new_comment = Comment.build_from(@blog, current_user.id, "")
+
     @blog = Blog.find(params[:id])
     @posts = Post.find_all_by_blog_id(params[:id])
     @count = current_user.blogs.count

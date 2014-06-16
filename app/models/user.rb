@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   mount_uploader :profile_image, ProfileImageUploader
 
   geocoded_by :city
-  after_validation :geocode, :if => :address_changed?
+  #after_validation :geocode, :if => :address_changed?
 
   has_many :blogs
   has_many :posts
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :display_name, :bio, :public, :profile_image, :city, :latitude, :longitude
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :display_name, :bio, :public, :profile_image, :city, :latitude, :longitude, :display, :public_bio
   # attr_accessible :title, :body
 end
   

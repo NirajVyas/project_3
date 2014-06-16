@@ -72,7 +72,28 @@
   <p> <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> </p>
   <td><%= link_to 'Destroy', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
+  <%= form_for build_comment_for_post(post) do |f| %>
+    <%= f.hidden_field :commentable_type %>
+    <%= f.hidden_field :commentable_id %>
+    <%= f.text_field :title %>
+    <%= f.text_area :body %>
+
+    <%= f.submit %>
+  <% end %>
 <hr style="height:3px;border:none;color:#333;background-color:#333;" />
+
+<!-- 
+   <div class="event">
+    <h1>
+      <%#= @event.name %>
+    </h1>
+  </div>
+        <h2> Comments </h2>
+        <%#= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
+        <%#= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+
+
+ -->
 
 <% end %>
 

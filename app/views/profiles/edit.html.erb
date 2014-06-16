@@ -1,10 +1,10 @@
 <%= form_for current_user, url: profile_path, method: :put do |f| %>
 
   <div class="field">
-    <%= f.text_field :display_name, :placeholder => "Display name" %>
+    <%= f.text_field :display, :placeholder => "Display name" %>
   </div>
   <div class="field">
-    <%= f.text_area :bio, :placeholder => "Tell us a bit about yourself.", :maxlength => 500 %>
+    <%= f.text_area :public_bio, :placeholder => "Tell us a bit about yourself.", :maxlength => 500 %>
   </div>
 
   <div class="field">

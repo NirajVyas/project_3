@@ -22,8 +22,8 @@
       <div id="edit_profile"> Edit Profile </div>
     <% end %>
 
-     <p><b>Display Name: </b> <%= current_user.display_name %> </p>
-     <p> <%= current_user.bio %> </p>
+     <p><b>Display Name: </b> <%= current_user.display %> </p>
+     <p> <%= current_user.public_bio %> </p>
      <p> Account public status: <%= current_user.public %> </p>
       <%= image_tag current_user.profile_image.url %>
        <%= current_user.city %> 
@@ -45,7 +45,9 @@
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
-
+<div style='width: 800px;'>
+  <div id="one_marker" style='width: 800px; height: 400px;'></div>
+</div>
 
 <script> 
 
@@ -134,6 +136,7 @@ handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
 
 
 </script>
+
 
 
 

@@ -4,3 +4,17 @@
   </strong>
     <%= comment.body %>
 <% end %>
+
+<hr>
+  <% { :id => "comment-#{comment.id}" } %>
+  <%= link_to "×", comment_path(comment), :method => :delete, :remote => true, :confirm => "Are you sure you want to remove this comment?", :disable_with => "×", :class => 'close' %>
+  <h4>
+    <%= comment.user.name %>
+    <small>
+      <%= comment.updated_at %>
+    </small>
+  </h4>
+  <p>
+    <%= comment.body %>
+  </p>
+</hr>
