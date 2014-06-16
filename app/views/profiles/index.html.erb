@@ -4,7 +4,9 @@
   <b> <p><%= profile.display %> </p>  </b>
   <i> <p><%= profile.public_bio %>  </p> </i>
 
-    <p><%= image_tag profile.profile_image.url%></p>
+    <div class="profile_image">
+      <%= image_tag profile.profile_image.url%>
+    </div>
 
  <p> Blogs: <%= @profiles.count %> </p>
  <p> Followers: </p>

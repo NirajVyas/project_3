@@ -39,22 +39,23 @@
   <p><%= post.stayed %></p>
   <p><%= post.tags %></p>
   <p><%= raw post.body %></p>
+
+
+
     <% post.images.each do |image| %>
-  <p><%= image_tag image.photo_file %></p>
-    <% end %>
 <p>
    <section id="gallery">
   <!-- thumbnail image wrapped in a link -->
     <section class="item">
         <a href="#img1">
-          <img src="http://media-cache-ec0.pinimg.com/736x/d6/f3/ea/d6f3ea3207ced5d18138680bee59f535.jpg">
+          <img src="<%= image.photo_file %>">
         </a>
     </section>
 
-<!-- lightbox container hidden with CSS -->
+  <!-- lightbox container hidden with CSS -->
   <div class="lightbox" id="img1">
       <div class="image">
-            <img src="http://media-cache-ec0.pinimg.com/736x/d6/f3/ea/d6f3ea3207ced5d18138680bee59f535.jpg">
+            <img src="<%= image.photo_file %>">
                 <div class="info">
                 <a href="#img3" class="prev">Prev</a>
                 <a href="#" class="close">Close</a>
@@ -63,6 +64,13 @@
         </div>
     </div>
 </p>
+
+    <% end %>
+
+
+
+
+
 <br />
 <br />
 <br />

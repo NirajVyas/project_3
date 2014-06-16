@@ -6,12 +6,12 @@
   <% end %>
 </div>
 
-<%#= search_form_for @search do |f| %>
-        <%#=# f.text_field :description_cont, :placeholder => "Title contains" %>
+<%= search_form_for @search do |f| %>
+        <%= f.text_field :description_cont, :placeholder => "Title contains" %>
    
-        <%#= f.submit %>
+        <%= f.submit %>
 
-  <%# end %>
+  <% end %>
 
 
 <% @blogs.each do |blog| %>
