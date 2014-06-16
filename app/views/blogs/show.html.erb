@@ -40,36 +40,10 @@
   <p><%= post.tags %></p>
   <p><%= raw post.body %></p>
 
-
-
     <% post.images.each do |image| %>
 <p>
-   <section id="gallery">
-  <!-- thumbnail image wrapped in a link -->
-    <section class="item">
-        <a href="#img1">
-          <img src="<%= image.photo_file %>">
-        </a>
-    </section>
-
-  <!-- lightbox container hidden with CSS -->
-  <div class="lightbox" id="img1">
-      <div class="image">
-            <img src="<%= image.photo_file %>">
-                <div class="info">
-                <a href="#img3" class="prev">Prev</a>
-                <a href="#" class="close">Close</a>
-                <a href="#img2" class="next">Next</a>
-            </div>
-        </div>
-    </div>
-</p>
-
+        <a href="<%= image.photo_file %>" data-lightbox="roadtrip">Image</a>
     <% end %>
-
-
-
-
 
 <br />
 <br />
