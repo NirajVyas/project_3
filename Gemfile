@@ -18,6 +18,16 @@ gem 'acts_as_commentable_with_threading'
 gem 'haml-rails'
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'rmagick'
+gem 'acts-as-taggable-on'
+gem 'ransack'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

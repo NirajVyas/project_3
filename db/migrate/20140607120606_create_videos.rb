@@ -9,7 +9,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :duration
       t.integer :likes
       t.integer :dislikes
-
+      t.integer :post_id
       t.timestamps
     end
   end
