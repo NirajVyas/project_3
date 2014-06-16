@@ -6,8 +6,8 @@
   <% end %>
 </div>
 
-<%= search_form_for @search do |f| %>
-        <%= f.text_field :description_cont, :placeholder => "Title contains" %>
+<%= search_form_for @search, url: "/blogs/user_search" do |f| %>
+        <%= f.text_field :title_cont, :placeholder => "Title contains" %>
    
         <%= f.submit %>
 

@@ -3,8 +3,6 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @search = Blog.search(params[:q])
-    @blogs = @search.result
-
     if params[:tag]
       @blogs = Blog.tagged_with(params[:tag])
       else
@@ -98,5 +96,10 @@ class BlogsController < ApplicationController
     render action: "index"
   end
 
+  def user_search
+    @search = Blog.search(params[:q])
+    @blogs = @search.result(:distinct => true)
+    render action: "index" 
+  end
 
 end
