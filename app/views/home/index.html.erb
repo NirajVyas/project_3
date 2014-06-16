@@ -37,17 +37,31 @@
 
 
 <div style='width: 800px;'>
-  <div id="one_marker" style='width: 800px; height: 400px;'></div>
+  <div id="multi_markers" style='width: 800px; height: 400px;'></div>
 </div>
-<div id='sidebar_container'>
-</div>
+    
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-<div style='width: 800px;'>
-  <div id="one_marker" style='width: 800px; height: 400px;'></div>
-</div>
+<script>
+
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: {id: 'multi_markers'}}, function(){
+  var markers = handler.addMarkers([
+    { lat: 43, lng: 3.5},
+    { lat: 45, lng: 4},
+    { lat: 47, lng: 3.5},
+    { lat: 49, lng: 4},
+    { lat: 51, lng: 3.5}
+  ]);
+
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+
+</script>
+
+
+
+
 
 <script> 
 
