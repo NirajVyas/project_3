@@ -92,6 +92,7 @@ class BlogsController < ApplicationController
   end
 
   def user_blog
+    @search = Blog.search(params[:q])
     @blogs = current_user.blogs
     render action: "index"
   end

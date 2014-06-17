@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.purr
-//= require forem
 //= require best_in_place
 //= require foundation
 //= require gmaps/google
