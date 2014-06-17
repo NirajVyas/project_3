@@ -24,5 +24,9 @@ class User < ActiveRecord::Base
     favorite_blogs.map(&:user).uniq
   end
 
+  def forem_name
+    name
+  end
+
 end
   

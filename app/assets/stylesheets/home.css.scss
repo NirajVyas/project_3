@@ -6,6 +6,23 @@ white_text {
   color: red!important;
 }
 
+#google_maps_api {
+  float: right;
+  margin-right: 100px;
+  margin-top: 335px;
+}
+
+.city_field {
+  width: 15em;
+  float: right;
+  margin-top: -407px;
+  margin-right: 75px;
+}
+
+.create_city {
+  margin-left: 1000px;
+}
+
 
 .callout_max {
   max-width: 700px;
@@ -21,7 +38,13 @@ white_text {
 
 .panel {
   max-width: 300px;
-  float: right;
+}
+
+.friends_activity {
+  width: 60%;
+  background-color: gray;
+  margin-left: 23%;
+  height: 200px;  
 }
 
 #blog_description {
