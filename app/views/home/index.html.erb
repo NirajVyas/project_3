@@ -5,13 +5,18 @@
  
 
 <div class="friends_activity">
-  <h5>Friends activity.</h5>
+  <h5>Blogs you are following</h5>
 
     <% current_user.favorite_blogs.each do |favourite| %>
-    <%= link_to favourite.title, favourite %>
-    
-      <% end %>
+    <ul id="sortable">
+      <li><%= link_to favourite.title, favourite %></li>
+    </ul>
+
+    <% end %>
 </div>
+
+
+
 
 <div class="callout_max">
   <div class="panel callout radius">

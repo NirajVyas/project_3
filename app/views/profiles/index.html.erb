@@ -1,5 +1,4 @@
 
-
 <% @profiles.each do |profile| %>
   <b> <p><%= profile.display %> </p>  </b>
   <i> <p><%= profile.public_bio %>  </p> </i>
@@ -9,12 +8,9 @@
     </div>
 
  <p> Blogs: <%= @profiles.count %> </p>
- <p> Followers: </p>
- <p> Following: </p>
- <p> Rep: </p>
- <p> Follow </p>
-<hr>
 <% end %>
 
+   <p> Blogs following: </p>
+<hr>
 
 
