@@ -39,10 +39,10 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
 
-      respond_to do |format|
-      format.html { redirect_to edit_blog_post(params[:blog_id], params[:id]) }
-      format.json { head :no_content }
-    end
+    #   respond_to do |format|
+    #   format.html { redirect_to edit_blog_post(params[:blog_id], params[:id]) }
+    #   format.json { head :no_content }
+    # end
 
   end
 
