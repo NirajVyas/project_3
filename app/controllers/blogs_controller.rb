@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
+
     @search = Blog.search(params[:q])
     if params[:tag]
       @blogs = Blog.tagged_with(params[:tag])
@@ -102,5 +103,22 @@ class BlogsController < ApplicationController
     @blogs = @search.result(:distinct => true)
     render action: "index" 
   end
+
+  def feed
+  @title = "Your feed title..."
+  
+  # all blogposts
+  @blogposts = Blog.order("created_at desc")
+  
+  # update timestamp for the feed
+  @updated = @blog.first.updated_at unless @blog.empty?
+  
+  respond_to do |format|
+    format.atom { render :layout => false }
+  
+    # if you want to permanently redirect to the ATOM feed and do not use the RSS feed
+    format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+  end
+end
 
 end

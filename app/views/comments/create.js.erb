@@ -1,0 +1,6 @@
+
+$('#comment_body').val('');
+
+var commentHtml = "<%= escape_javascript(render @comment) %>";
+
+$('#comments').hide().fadeIn(1500).prepend(commentHtml);

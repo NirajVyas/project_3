@@ -52,7 +52,7 @@
         <div class="lb-overlay" id="image-1">
             <img src="<%= image.photo_file %>" alt="image01" />
             <div>
-                <h3><%= @blog.title %> <span></h3>
+                <h3><%= @blog.title %> </h3>
                 <p>DESCRIPTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
                 <a href="#image-10" class="lb-prev">Prev</a>
                 <a href="#image-2" class="lb-next">Next</a>
@@ -83,7 +83,7 @@
   <p> <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> </p>
   <td><%= link_to 'Destroy', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-  <%= form_for build_comment_for_post(post) do |f| %>
+  <%= form_for build_comment_for_post(post), remote: true do |f| %>
     <%= f.hidden_field :commentable_type %>
     <%= f.hidden_field :commentable_id %>
     <%= f.text_field :title, :placeholder => "Title" %>
@@ -92,8 +92,10 @@
     <%= f.submit %>
   <% end %>
 
-<%= render post.root_comments %>
-
+  <div id='comments'>
+    <%= render post.root_comments.reverse_order %>
+  </div>
+  
   <hr style="height:3px;border:none;color:#333;background-color:#333;" />
 
 <% end %>
