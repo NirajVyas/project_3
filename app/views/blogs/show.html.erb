@@ -20,9 +20,17 @@
 </div>
 
 <div class= "edit_blog">
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %> |
-<%= link_to 'New Post', new_blog_post_path(@blog) %>
+
+   <% if can? :update, @blog %>
+      <%= link_to 'Edit', edit_blog_path(@blog) %> |
+   <% end %>
+
+   <% if can? :update, @blog %>
+      <%= link_to 'New Post', new_blog_post_path(@blog) %> |
+   <% end %>
+
+   <%= link_to 'Back', blogs_path %> 
+
 </div>
 
 </div>
