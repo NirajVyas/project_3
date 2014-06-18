@@ -23,29 +23,46 @@
 
     <%= f.text_area :description, :rows => "5", :cols => 10, :placeholder => "Description" %>
 
-    <div class="field">
-      <%= f.label :blog_image %><br />
+<br />
+<div class="blog_choose_image">
+      <div class="blog_image_field_text">
+        <h1><%= f.label :Upload_an_Image_for_your_blog %></h1><br />
+      </div>
+    <div class="blog_image_field">
       <%= f.file_field :blog_image %>
     </div>
-    
-  <div class="row">
-
-  <div class="large-6 columns">
-  <label>Blog:</label>
-    <%= label :public, "Public" %>
-    <%= f.radio_button :public, true , :checked => true , :value => true %>
-
-    <%= label :public, "Private"%>
-    <%= f.radio_button :public, false, :value => false %>
-  </div>
 </div>
+
+
 <div id="blog_comments">
-   <b>Comments:</b>
-    <%= label :comments, "Allow" %>
-    <%= f.radio_button :comments, true , :checked => true , :value => true %>
-    <%= label :comments, "Disable"%>
-    <%= f.radio_button :comments, false, :value => false %>
+   <table>
+      <tr>
+        <td> Would you like your profile public or private? </td> <br />
+        <td> <%= label :public, "Public" %></td>
+        <td> <%= f.radio_button :public, true , :checked => true , :value => true %> </td>
+
+        <td> <%= label :public, "Private"%> </td>
+        <td> <%= f.radio_button :public, false, :value => false %> </td>
+      </tr>
+  </table>
 </div>
+
+
+<div id="blog_comments">
+   <table>
+      <tr>
+        <td> Would you like to allow comments your posts? </td> <br />
+        <td> <%= label :comments, "Allow" %></td>
+        <td> <%= f.radio_button :comments, true , :checked => true , :value => true %> </td>
+
+        <td> <%= label :comments, "Disable"%> </td>
+        <td> <%= f.radio_button :comments, false, :value => false %> </td>
+      </tr>
+  </table>
+</div>
+
+
+
 
   <div class="actions">
     <%= f.submit %>
