@@ -4,7 +4,7 @@
 
   <div class="modal">
     <header>
-      <p><h1> Most common tags</h1> </p>
+      <p><h1> Most common tags </h1> </p>
     </header>
       <section>
         <div id="tag_cloud">
@@ -44,9 +44,14 @@
       <%= render partial: 'favorite_form', locals: {:blog => blog}  %>
     </div></p>
 
-       <%= link_to 'Show ', blog %>
-       <%= link_to ' Edit ', edit_blog_path(blog) %>
-       <%= link_to ' Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <%= link_to 'Show ', blog if can? :show, blog%>
+
+        <% if can? :update, blog %>
+           <%= link_to ' Edit ', edit_blog_path(blog) %>
+        <% end %> 
+
+
+         <%= link_to ' Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, blog %>
 
     </section>
   </div>

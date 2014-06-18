@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   acts_as_marker
   markable_as :favorite
 
+  def role?(role)
+      self.role.to_s == role.to_s
+    end
+
+
   mount_uploader :profile_image, ProfileImageUploader
 
   geocoded_by :city
