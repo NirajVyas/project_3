@@ -98,10 +98,11 @@
 </div>
 
 
+<% if @blog.comments %>
 
 <div class="modal_post">
-      <section>
-    
+      <section>    
+
       <div class="comments_container"> Comments  </div>
 
       <div class="slider" style="display: none;">
@@ -123,7 +124,7 @@
 
       </section>
 </div>
-
+<% end %>
 
 <div class="edit_blog_post">
    <%= link_to 'Edit Post', edit_blog_post_path(@blog, post) %> 
