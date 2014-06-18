@@ -43,23 +43,26 @@
     <div id="multi_markers" style='width: 800px; height: 400px;'></div>
   </div>
   <div>
-</div>
 
 
   <%= form_for @city do |f| %>
     <div class="city_field">
-      <%= f.text_field :city, :placeholder => "City" %>
+      <%= f.text_field :city, :placeholder => "Keep track of which cities you have visted." %>
     </div>
     <div class="create_city">
       <%= f.submit %>
     </div>
   <% end %>
+</div>
 
   <% @cities.each do |city| %>
-    <li><%= city.city %></li>
+    <table>
+        <tr>
+          <td><%= city.city %></td>
+        </tr>
+    </table>
   <% end %>
 
- 
 <script>
 
 var handler = Gmaps.build('Google');
