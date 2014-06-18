@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.landing_edit_profile {
+  width: 300px;
+  border: 2px solid black;
+  margin-left: 8%;
+}
+
+.landing_bolgs_follow {
+  width: 300px;
+  border: 2px solid black;
+  margin-left: 30%;
+  margin-top: 45px;
+  float: left;
+}
+
 white_text {
   color: red!important;
 }
@@ -9,7 +23,7 @@ white_text {
 #google_maps_api {
   float: right;
   margin-right: 100px;
-  margin-top: 335px;
+  margin-top: -670px;
 }
 
 .city_field {
@@ -23,11 +37,21 @@ white_text {
   margin-left: 1000px;
 }
 
+#landing_buttons {
+  float: right;
+  width: 50%;
+  max-width: 150px;
+  margin-right: 400px;
+  margin-top: 50px;
+}
+
 
 .callout_max {
   max-width: 700px;
   float: left;
-  margin-top: 50px;
+  margin-top: 150px;
+  margin-left: 8%;
+  float: right;
 }
 
 #edit_profile {
@@ -43,8 +67,9 @@ white_text {
 .friends_activity {
   width: 60%;
   background-color: gray;
-  margin-left: 23%;
   height: 200px;  
+  float: right;
+  margin-right: 130px;
 }
 
 #blog_description {
@@ -55,5 +80,11 @@ white_text {
   border: 2px solid black;
 }
 
+.panel callout radius {
+  float: right;
+}
 
+.landing_page {
+  margin-left: 100%;
 
+}

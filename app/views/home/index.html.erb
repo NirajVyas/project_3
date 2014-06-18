@@ -1,23 +1,20 @@
 <div class="white_text"><a href="#" class="button expand">Hello <%= current_user.name %></a></div>
 
-<a href="<%= new_blog_path %>" class="button [secondary success alert]">New Blog</a>
-<a href="<%= blogs_user_blog_path %>" class="button [secondary success alert]">View Blogs</a>
- 
+<div id="landing_buttons">
+  <p><a href="<%= new_blog_path %>" class="button [secondary success alert]">New Blog</a></p>
+  <p><a href="<%= blogs_user_blog_path %>" class="button [secondary success alert]">View Blogs</a></p>
+ </div>  
 
-<div class="friends_activity">
+ <div class="landing_bolgs_follow"> 
   <h5>Blogs you are following</h5>
-
     <% current_user.favorite_blogs.each do |favourite| %>
     <ul id="sortable">
       <li><%= link_to favourite.title, favourite %></li>
     </ul>
+   <% end %>
+ </div>
 
-    <% end %>
-</div>
-
-<div class="callout_max">
-  <div class="panel callout radius">
-
+  <div class="landing_edit_profile">
     <%= link_to edit_profile_path do %>
       <div id="edit_profile"> Edit Profile </div>
     <% end %>
@@ -32,10 +29,10 @@
     <p><b>Following:</b></p>
     <p><b> Followers: </p>
   </div>
-</div>
+
 
 <div id="google_maps_api">
-  <div style='width: 800px;'>
+  <div style='width: 900px;'>
     <div id="multi_markers" style='width: 800px; height: 400px;'></div>
   </div>
 </div>

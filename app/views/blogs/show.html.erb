@@ -13,7 +13,7 @@
 </div>
 
 <div id="blog_description1">  <p>
-  <h1><%= raw @blog.description %></h1></p>
+  <h1><%= @blog.description %></h1></p>
 </div>
 
 <div class= "edit_blog">
@@ -39,7 +39,7 @@
 
   <p><%= post.stayed %></p>
   <p><%= post.tags %></p>
-  <p><%= raw post.body %></p>
+  <p><%= post.body %></p>
 
     <% post.images.each do |image| %>
 

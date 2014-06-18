@@ -1,17 +1,20 @@
 
 <% @profiles.each do |profile| %>
-  <b> <p><%= profile.display %> </p>  </b>
-  <i> <p><%= profile.public_bio %>  </p> </i>
 
-    <div class="profile_image">
-      <%= image_tag profile.profile_image.url%>
-    </div>
+  <div id="modal">
+    <header><h1><%= profile.display %></h1></header>
+    <section>
+      <div class="profile_image">
+        <%= image_tag profile.profile_image.url%>
+      </div>
+      <p>       <%= profile.public_bio %>  
+    </p>
+         <header><h1>Blogs: <%= profile.blogs.count %></h1></header>
 
- <p> Blogs: <%= profile.blogs.count %> </p>
+    </section>
+  </div>
+
+  <hr>
 
 <% end %>
-
-   <p> Blogs following: </p>
-<hr>
-
 

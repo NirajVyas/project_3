@@ -1,25 +1,26 @@
-<h1>Listing blogs</h1>
+<div id="listing_blogs"><h1>Listing blogs</h1></div>
 
-<div id="tag_cloud">
-  <% tag_cloud Blog.tag_counts, %w[ s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div>
+  <div class="bubble">
+    <div id="tag_cloud">
+      <% tag_cloud Blog.tag_counts, %w[ s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
+  </div>
 
-<%= search_form_for @search, url: "/blogs/user_search" do |f| %>
-        <%= f.text_field :title_cont, :placeholder => "Title contains" %>
-   
-        <%= f.submit %>
-
-  <% end %>
-
+  <div class="search">
+      <%= search_form_for @search, url: "/blogs/user_search" do |f| %>
+              <%= f.text_field :title_cont, :placeholder => "Title contains" %>
+  </div>
+  <div class="search_button"> <%= f.submit %> </div>
+      <% end %>
 
 <% @blogs.each do |blog| %>
   <div class="user_blog">
     <hr style="height:3px;border:none;color:#333;background-color:#333;" />
-    <div id="post_date"><%= blog.date %></div>
+    <div class="listing_blogs_date"><%= blog.date %></div>
 
-    <h1><div id="post_title1"><%= blog.title %></div></h1>
+    <h1><div class="listing_blogs_title"><%= blog.title %></div></h1>
 
     <table>
       <div class="blogs_listing_image"> 
@@ -27,12 +28,14 @@
       </div>
 
       <div class="blog_description">
-        <td> <%= raw blog.description %> </td>
+        <td> <%= blog.description %> </td>
       </div>
     </table>
 
     <p>
-      Tags: <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+      <div class="tags">
+        <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %> 
+      </div>
     </p>
     
     <div id='favorite-form-<%=blog.id%>'>

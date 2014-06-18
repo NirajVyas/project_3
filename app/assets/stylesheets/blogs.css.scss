@@ -2,13 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.listing_blogs_title {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+  width: 700px;
+  margin-left: 350px;
+}
+
+.listing_blogs_date {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 15%;
+  font-size: 20px;
+}
+
 #tag_cloud {
   width: 400px;
   line-height: 1.6em;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
 }
+
 
 #blog_title {
   text-align: center;
@@ -29,9 +48,27 @@
   text-align: center;
 }
 
+.search {
+  width: 45%;
+  margin-left: 26%;
+}
+
+.search_button {
+  margin-left: 71.5%;
+  margin-top: -57px;
+}
+
+.tags {
+  margin-left: 20px;
+  border: 1px solid black;
+  margin-right: 20px;
+  text-align: center;
+}
+
+
 #blog_description1 {
   text-align: center;
-
+  font-size: 20px !important;
 }
 
 .unfavorite-button {
