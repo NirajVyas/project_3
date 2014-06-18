@@ -1,6 +1,5 @@
 <a href="" class="button expand"><%= notice %></a>
 
-<p id="notice"><%= notice %></p>
 
 <div id="modal">
 
@@ -43,7 +42,9 @@
     </header>
       <section>
 
-       <div class="user_location"><%= post.location %> (Click to view map)</div> 
+
+
+       <div class="user_location"><%= post.location %> (Click to hide map)</div> 
 
    <div class="google_map_location">
       <% if post.location %>
@@ -76,16 +77,7 @@
         
   <% post.images.each do |image| %>
 
-
-<div id="images-box">
-    <div class="holder">
-        <div id="image-1" class="image-lightbox">
-            <span class="close"><a href="#">X</a></span>
-            <img src="" alt="earth!">
-            <a class="expand" href="#image-1"></a>
-        </div>
-    </div>
-    <a href="<%= image.photo_file %>" data-lightbox="image-1" data-title="My caption">Image #1</a>
+    <img border="0" src="<%= image.photo_file %>" alt="Uploaded Image" width="304" height="228">
 
   <% end %>
 

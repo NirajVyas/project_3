@@ -12,6 +12,11 @@
  *= require_tree .
  */
 
+
+.home_page_images {
+  text-align: center;
+}
+
  .bubble 
 {
 position: relative;
