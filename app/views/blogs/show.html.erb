@@ -2,6 +2,9 @@
 
 <p id="notice"><%= notice %></p>
 
+<div id="modal">
+
+
 <div id="blog_title"><p>
   <h2><%= @blog.title %></h2>
 </p>
@@ -22,70 +25,89 @@
 <%= link_to 'New Post', new_blog_post_path(@blog) %>
 </div>
 
+</div>
 <hr>
-
 <% @posts.each do |post| %>
 
-  <p><div class="post_date"><%= post.date %></div></p>
-  <h3><div class="post_title1"><%= post.title %></div></h3>
-  <div class="user_location"><%= post.location %></div>
+<div class="modal">
+    <header>
+      <p><h1> <%= post.title %> - <%= post.date %></h1> </p>
+    </header>
+      <section>
+
+       <div class="user_location"><%= post.location %> (Click to view map)</div> 
 
    <div class="google_map_location">
-
       <% if post.location %>
         <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
       <% end %>
    </div>
+   
+   </section>     
 
-  <p><%= post.stayed %></p>
-  <p><%= post.tags %></p>
-  <p><%= post.body %></p>
+</div>
 
-    <% post.images.each do |image| %>
+<div class="modal_post">
+    <header>
+      <p><h1>   <p> <%= post.stayed %></p></h1> </p>
+    </header>
+</div>
 
+<div class="modal_post">
+    <header>
+      <p><h1> </h1> </p>
+    </header>
+      <section>
+        <p><%= post.body %></p>
+      </section>
+</div>
 
-<ul class="lb-album">
-    <li>
-        <a href="#image-1">
-            <img src="<%= image.photo_file %>" alt="image01">
-            <span><%= @blog.title %></span>
-        </a>
-        <div class="lb-overlay" id="image-1">
-            <img src="<%= image.photo_file %>" alt="image01" />
-            <div>
-                <h3><%= @blog.title %> </h3>
-                <p>DESCRIPTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-                <a href="#image-10" class="lb-prev">Prev</a>
-                <a href="#image-2" class="lb-next">Next</a>
+<div class="modal_post">
+  
+      <section>
+        
+  <% post.images.each do |image| %>
+    <ul class="lb-album">
+        <li>
+            <a href="#image-1">
+                <img src="<%= image.photo_file %>" alt="image01">
+                <span><%= @blog.title %></span>
+            </a>
+            <div class="lb-overlay" id="image-1">
+                <img src="<%= image.photo_file %>" alt="image01" />
+                <div>
+                    <h3><%= @blog.title %> </h3>
+                    <p>DESCRIPTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+                    <a href="#image-10" class="lb-prev">Prev</a>
+                    <a href="#image-2" class="lb-next">Next</a>
+                </div>
+                <a href="#page" class="lb-close">x Close</a>
             </div>
-            <a href="#page" class="lb-close">x Close</a>
-        </div>
-    </li>
-    <li> 
-        <!-- ... -->
-    </li>
-</ul>
+        </li>
+    </ul>
+  <% end %>
 
-    <% end %>
+      </section>
+</div>
 
 
 
 
+<div class="modal_post">
+   
+      <section style="text-align: center;">
+        <% if post.video %>
+          <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
+        <% end %>
+      </section>
+</div>
 
+<div class="modal_post">
+  
+      <section>
+    
 
-
-<br />
-<br />
-<br />
-  <p><% if post.video %>
-    <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/<%= post.video.uid %>" frameborder="0"></iframe>
-  <% end %></p>
-
-  <p> <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> </p>
-  <td><%= link_to 'Destroy', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-
-      <div class="comments_container"> Comments  </div>
+      <div class="comments_container" style= "text-align: center"> Comments  </div>
 
       <div class="slider" style="display: none;">
         <div class="hide_comments">
@@ -102,9 +124,22 @@
             <%= render post.root_comments.reverse_order %>
           </div>
         </div>
-      </div>
+      </div>        
+
+      </section>
+</div>
+
+
+<div class="edit_blog_post">
+   <%= link_to 'Edit Post', edit_blog_post_path(@blog, post) %> 
+</div>
+
+<div class="edit_blog_post">
+<%= link_to 'Delete Post', [@blog, post], method: :delete, data: { confirm: 'Are you sure?' } %></div>
+
+
+
   <hr style="height:3px;border:none;color:#333;background-color:#333;" />
 
 <% end %>
-
 
