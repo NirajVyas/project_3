@@ -42,16 +42,16 @@
     </header>
       <section>
 
+    <div class="center_map">
 
+           <div class="user_location"><%= post.location %> (Click to hide map)</div> 
 
-       <div class="user_location"><%= post.location %> (Click to hide map)</div> 
-
-   <div class="google_map_location">
-      <% if post.location %>
-        <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
-      <% end %>
-   </div>
-   
+       <div class="google_map_location">
+          <% if post.location %>
+            <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= post.latitude %>,<%= post.longitude %>&zoom=11&size=400x400">
+          <% end %>
+       </div>
+     </div>  
    </section>     
 
 </div>
@@ -71,18 +71,15 @@
       </section>
 </div>
 
-<div class="modal_post">
-  
+  <div class="modal_post">
+    <div class="center_image">
       <section>
-        
-  <% post.images.each do |image| %>
-
-    <img border="0" src="<%= image.photo_file %>" alt="Uploaded Image" width="304" height="228">
-
-  <% end %>
-
+        <% post.images.each do |image| %>
+          <img border="0" src="<%= image.photo_file %>" alt="Uploaded Image" width="304" height="228">
+        <% end %>
       </section>
-</div>
+    </div>
+  </div>
 
 
 

@@ -36,7 +36,6 @@
     <section>
      <p> <h1> <%= current_user.display %> <h1> </p>
      <p> <h1> <%= current_user.public_bio %> </h1> </p>
-     <p>  <%= current_user.public %>  </p> 
      <p> <%= image_tag current_user.profile_image.url %> </p>
     </section>
   </div>
@@ -49,6 +48,7 @@
     <div id="multi_markers" style='width: 800px; height: 400px;'></div>
   </div>
   <div>
+
 
 
   <%= form_for @city do |f| %>

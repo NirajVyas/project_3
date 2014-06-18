@@ -1,4 +1,7 @@
-<%= form_for current_user, url: profile_path, method: :put do |f| %>
+<div class="modal">
+    <header><h1><%= form_for current_user, url: profile_path, method: :put do |f| %></h1></header>
+
+    <section>
 
   <div class="field">
     <%= f.text_field :display, :placeholder => "Display name" %>
@@ -21,9 +24,16 @@
   <div><%= label :public, "Private"%>
        <%= f.radio_button :public, false, :value => false%></div>
 
-
-
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+     
+    </section>
+  </div>
+
+
+
+
