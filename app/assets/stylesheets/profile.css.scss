@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .profile_image {
-  width: 100px;
-  margin-left: 5%;
+  width: 120px;
+  margin-left: 40%;
+  border: 1px solid black;
 }
 
 .display_name_profile {
@@ -51,3 +52,52 @@
     line-height: 175%;
     color: #333;
   }
+
+
+
+ article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+  .modal {
+    width: 800px;
+    border: 1px solid #CCC;
+    box-shadow: 0 1px 5px #CCC;
+    border-radius: 5px;
+    font-family: verdana;
+    margin: 25px auto;
+    overflow: hidden;
+  }
+  .modal header {
+    background: #f1f1f1;
+    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );
+    box-shadow: 0 1px 2px #888;
+    padding: 10px;
+  }
+  .modal h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    text-shadow: 0 1px 2px white;
+    color: #888;
+    text-align: center;
+  }
+  .modal section {
+    padding: 10px 30px; 
+    font-size: 12px;
+    line-height: 175%;
+    color: #333;
+  }
+
+.view_all_blog_images {
+  margin-left: 23%;
+}
+
+
+
+
+
+
+
