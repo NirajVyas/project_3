@@ -2,7 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#demo article h2 {
+  color: #333;
+  font-size: 1.2em;
+}
 
+#demo article .content_w {
+  background-color: #eee;
+  overflow: hidden;
+  height: 0;
+}
 
 
 

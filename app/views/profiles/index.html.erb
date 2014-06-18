@@ -12,9 +12,63 @@
     </p>
       <header><h1>Blogs: <%= profile.blogs.count %></h1></header>
     </section>
+
+    <section id="demo">
+      <article>
+        <h1>Blogs: <%= profile.blogs.count %></h1>
+        <div class="content_w">
+          <div class="content">
+
+            <% profile.blogs.each do |blog|  %> 
+            <li>  <%= blog.title %> </li>
+            <% end %>
+
+
+          </div>
+        </div>
+      </article>
+    </section>
   </div>
 
   <hr>
 
 <% end %>
 
+
+<script>
+
+(function($) {
+
+  $('article').on('click', function() {
+    slide($('.content', this)); 
+  });
+
+  function slide(content) {
+    var wrapper = content.parent();
+    var contentHeight = content.outerHeight(true);
+    var wrapperHeight = wrapper.height();
+
+    wrapper.toggleClass('open');
+    if (wrapper.hasClass('open')) {
+      setTimeout(function() {
+        wrapper.addClass('transition').css('height', contentHeight);
+      }, 10);
+    }
+    else {
+      setTimeout(function() {
+        wrapper.css('height', wrapperHeight);
+        setTimeout(function() {
+          wrapper.addClass('transition').css('height', 0);
+        }, 10);
+      }, 10);
+    }
+
+    wrapper.one('transitionEnd webkitTransitionEnd transitionend oTransitionEnd msTransitionEnd', function() {
+      if(wrapper.hasClass('open')) {
+        wrapper.removeClass('transition').css('height', 'auto');
+      }
+    });
+  }
+})(jQuery);
+
+</script>
