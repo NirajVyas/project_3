@@ -80,7 +80,9 @@
     <% end %>
       <li class="has-dropdown">
     <% if current_user %>
-      <a href="#">Settings</a>
+
+      <a href="<%= edit_user_registration_path %>">Settings</a>
+
     <% else %>
         <a href="#" onclick="lightbox_open();">Login</a>
         <div id="light">
@@ -116,7 +118,6 @@
             <li><a href="<%= blogs_path %>">Blogs</a></li>
             <li><a href="<%= profiles_index_path %>">Bloggers</a></li>
             <li><a href="#">Forum</a></li>
-            <li><a href="#">Settings</a></li>
           </ul>
       <% end %> 
   </section>

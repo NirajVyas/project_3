@@ -10,12 +10,10 @@
     </p>
       <p><%= profile.public_bio %>  
     </p>
-      <header><h1>Blogs: <%= profile.blogs.count %></h1></header>
-    </section>
 
     <section id="demo">
       <article>
-        <h1>Blogs: <%= profile.blogs.count %></h1>
+     <header>   <h1>Blogs: <%= profile.blogs.count %></h1> </header>
         <div class="content_w">
           <div class="content">
 
@@ -23,12 +21,12 @@
             <li>  <%= blog.title %> </li>
             <% end %>
 
-
           </div>
         </div>
       </article>
     </section>
   </div>
+</section>
 
   <hr>
 
