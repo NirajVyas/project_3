@@ -18,7 +18,9 @@
           <div class="content">
 
             <% profile.blogs.each do |blog|  %> 
-            <li>  <%= blog.title %> </li>
+
+              <li> <%= link_to blog.title, blog_path(blog.id) %> </li>
+                     
             <% end %>
 
           </div>

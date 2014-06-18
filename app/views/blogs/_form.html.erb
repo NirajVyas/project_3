@@ -2,6 +2,13 @@
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
             
  -->
+
+<div class="modal">
+    <header>
+      <p><h1> New Blog </h1></p>
+    </header>
+      <section>
+
 <%= form_for(@blog) do |f| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
@@ -68,5 +75,10 @@
     <%= f.submit %>
   </div>
 <% end %>
+   </section>     
+
+</div>
+
+
 
 
