@@ -2,9 +2,10 @@
   <h1>Hello <%= current_user.name %></h1>
 </div>
 
-<div id="landing_buttons">
-  <p><a href="<%= new_blog_path %>" class="button [secondary success alert]">New Blog</a></p>
-  <p><a href="<%= blogs_user_blog_path %>" class="button [secondary success alert]">View Blogs</a></p>
+
+<div id="modal">
+     <header> <h1><a href="<%= new_blog_path %>">Create a new blog.</a> </h1></header>
+     <header> <h1><a href="<%= blogs_user_blog_path %>">View your current blogs.</a> </h1> </header>
  </div>  
 
 <div id="modal">
