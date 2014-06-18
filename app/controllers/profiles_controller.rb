@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @profiles = User.all
+    @profiles = User.where(public: true)
   end
 
   def show

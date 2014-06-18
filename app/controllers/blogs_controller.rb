@@ -5,9 +5,9 @@ class BlogsController < ApplicationController
 
     @search = Blog.search(params[:q])
     if params[:tag]
-      @blogs = Blog.tagged_with(params[:tag])
+      @blogs = Blog.tagged_with(params[:tag]).where(public: true)
       else
-       @blogs = Blog.all
+       @blogs = Blog.where public: true
         respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @blogs }

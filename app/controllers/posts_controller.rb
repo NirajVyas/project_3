@@ -54,7 +54,7 @@ class PostsController < ApplicationController
     @post.blog = @blog
     respond_to do |format|
       if @post.save
-        @post.create_images(images)
+        @post.create_images(images) if images
         format.html { redirect_to @post.blog, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
