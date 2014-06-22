@@ -36,7 +36,7 @@
 <hr>
 <% @posts.each do |post| %>
 
-<div class="modal">
+<div class="modal_post">
     <header>
       <p><h1> <%= post.title %> - <%= post.date %></h1> </p>
     </header>
@@ -44,7 +44,7 @@
 
     <div class="center_map">
 
-           <div class="user_location"><%= post.location %> (Click to hide map)</div> 
+      <div class="user_location"><%= post.location %> (Click to hide map)</div> 
 
        <div class="google_map_location">
           <% if post.location %>
@@ -80,10 +80,6 @@
       </section>
     </div>
   </div>
-
-
-
-
 
 <div class="modal_post">
    
