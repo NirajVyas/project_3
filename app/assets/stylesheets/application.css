@@ -13,6 +13,16 @@
  */
 
 
+
+
+.navbar_fixed_top {
+position: fixed; 
+width: 100%;
+z-index: 2000;
+margin-top: -60px;
+}
+
+
 .home_page_images {
   text-align: center;
 }

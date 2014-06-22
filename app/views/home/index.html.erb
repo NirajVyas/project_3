@@ -4,11 +4,6 @@
 
 
 <div id="modal">
-     <header> <h1><a href="<%= new_blog_path %>">Create a new blog.</a> </h1></header>
-     <header> <h1><a href="<%= blogs_user_blog_path %>">View your current blogs.</a> </h1> </header>
- </div>  
-
-<div id="modal">
     <header><h1>Blogs you are following</h1></header>
     <section>
     <p> 
@@ -36,7 +31,7 @@
     <section>
      <p> <h1> <%= current_user.display %> <h1> </p>
      <p> <h1> <%= current_user.public_bio %> </h1> </p>
-     <p> <%= image_tag current_user.profile_image.url %> </p>
+     <p class="profile_home"> <%= image_tag current_user.profile_image.thumb.url %> </p>
     </section>
   </div>
 </div>

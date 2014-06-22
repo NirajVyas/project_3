@@ -6,6 +6,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
 <%= auto_discovery_link_tag :atom, "/feed" %>
@@ -26,108 +31,164 @@
 
 <body>
 
-    <nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
 
-      <% if current_user %>
-        <h1>Logged in as <%= current_user.email %></h1>
-      <% else %>
-      <h1><a href="#">Travel Blogger</a></h1>
-    </li>
-      <% end %>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+  <div class="navbar_fixed_top">
 
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Travel Blogger</a>
+    </div>
 
-    <% if current_user %>
-          <li class="active"><%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <li class="active"><a href="#" onclick="lightbox_open();">Sign Up</a></li>
-       <div id="light">
-         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if current_user %>
+           <p class="navbar-text">Logged in as <%= current_user.email %> |</p>
+            <% else %>
+        <% end %>
+           <p class="navbar-text"> </p>
+           <p class="navbar-text"> </p>
+        <% if current_user %>
+        <li><a href="<%= root_path %>">Dashboard</a></li>
+         <p class="navbar-text"> </p>
+        <% else %>
+       <li><a href="#"><b>Why travel blogger?</b></a></li>
+        <% end %>
 
-          <div id="name"> <%= f.label :name %><br />
-          <%= f.text_field :name, :placeholder => "Name" %> </div>
+        <% if current_user %>
+        <li><a href="<%= blogs_path %>">Blogs</a></li>
+                   <p class="navbar-text"> </p>
+        <% end %>
 
-          <div id="email"><%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %></div>
+        <% if current_user %>
+          <li><a href="<%= profiles_index_path %>">Bloggers</a></li>
+                   <p class="navbar-text"> </p>
+        <% end %>
 
-          <div id="password"><%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %></div>
-
-          <div id="password_confirmation"><%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-          <div id="signupbutton"><%= f.submit "Sign up" %></div>
-         <% end %>
-      </div>
-
-    <% end %>
-      <li class="has-dropdown">
-    <% if current_user %>
-
-      <a href="<%= edit_user_registration_path %>">Settings</a>
-
-    <% else %>
-        <a href="#" onclick="lightbox_open();">Login</a>
-        <div id="light">
-          <div class="signin-form">
-            <h2>Sign in</h2>
-              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <div id="signin-email"><%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true %></div>
-
-                <div id="signin-password"><%= f.label :password %><br />
-                  <%= f.password_field :password, autocomplete: "off" %></div>
-
-                <% if devise_mapping.rememberable? -%>
-                  <div id="signin-checkbox"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-                <% end %>
-                <div id="signin-signin"><%= f.submit "Sign in" %></div>
-              <% end %>
-          </div>
-        </div>
-
-        <div id="fade" onClick="lightbox_close();"></div> 
-    <% end %>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
+        <% if current_user %>
+          <li><a href="<%= forem_path %>">Forum</a></li>
+        <% end %>
+      </ul>
+ 
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <% if current_user %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Manage Blogs</b> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="<%= new_blog_path %>">Create a blog</a></li>
+          <li class="divider"></li>
+          <li><a href="<%= blogs_user_blog_path %>">Edit a blog</a></li>
         </ul>
       </li>
-    </ul>
+        <% end %>
 
-    <!-- Left Nav Section -->
-    <ul class="left">
         <% if current_user %>
-            <li><a href="<%= root_path %>">Dashboard</a></li>
-            <li><a href="<%= blogs_path %>">Blogs</a></li>
-            <li><a href="<%= profiles_index_path %>">Bloggers</a></li>
-            <li><a href="<%= forem_path %>">Forum</a></li>
-          </ul>
-      <% end %> 
-  </section>
+          <li><a href="<%= edit_user_registration_path %>">Settings</a></li>
+        <% end %>
+          <% if current_user %>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            
 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Sign Up</b> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"  data-toggle="modal" data-target="#myModal1"> Email</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Facebook</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Twitter</a></li>
+              </ul>
+            </li>
 
+              <li><a href="#"  data-toggle="modal" data-target="#myModal">Sign In</a></li>
 
-<div class='login'>
-  <% if current_user %>
- 
-        <div id="sign-out-button"> Sign Out </div>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Login</h4>
+                    </div>
+                    <div class="modal-body">
 
-  <% else %>      
+                         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                            <div id="signin-email"><%= f.label :email %><br />
+                            <%= f.email_field :email, autofocus: true %></div>
 
-  </div>
+                            <div id="signin-password"><%= f.label :password %><br />
+                              <%= f.password_field :password, autocomplete: "off" %></div>
+
+                            <% if devise_mapping.rememberable? -%>
+                              <div id="signin-checkbox"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+                            <% end %>
+                            <div id="signin-signin"><%= f.submit "Sign in" %></div>
+                         </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"><%= f.submit "Sign in" %></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>                   
+
+  <!-- Modal -->
+              <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Sign up via email below</h4>
+                    </div>
+                    <div class="modal-body">
+
+                            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                            <%= devise_error_messages! %>
+
+                            <div id="name"> <%= f.label :name %><br />
+                            <%= f.text_field :name, :placeholder => "Name" %> </div>
+
+                            <div id="email"><%= f.label :email %><br />
+                            <%= f.email_field :email, autofocus: true, :placeholder => "Email" %></div>
+
+                            <div id="password"><%= f.label :password %><br />
+                            <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %></div>
+
+                            <div id="password_confirmation"><%= f.label :password_confirmation %><br />
+                            <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation" %></div>
+
+                            <div id="signupbutton"><%= f.submit "Sign up" %></div>
+                                     
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"> <%= f.submit "Sign up" %></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             <% end %>
+          <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
-
 
 </div>
 
+  <% if current_user %>
+ 
+  <% else %>      
 
 <div id="slideshow">
    <div>
@@ -176,8 +237,6 @@ setInterval(function() {
 
   <% end %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
