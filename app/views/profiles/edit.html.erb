@@ -4,25 +4,28 @@
     <section>
 
   <div class="field">
-    <%= f.text_field :display, :placeholder => "Display name" %>
+   <p> <%= f.text_field :display, :placeholder => "Display name" %> </p>
   </div>
   <div class="field">
-    <%= f.text_area :public_bio, :placeholder => "Tell us a bit about yourself.", :maxlength => 500 %>
+    <%= f.text_area :public_bio, :placeholder => "Tell us a bit about yourself. Maximum of 500 characters.", :maxlength => 500, :rows => 2, :cols => 119 %>
   </div>
+<br />
 
   <div class="field">
     <%= f.label :profile_image %><br />
     <%= f.file_field :profile_image %>
   </div>
+<br />
+<br />
 
   <h1> Would you like your account to be public or private? </h1>
 
    <div><%= label :public, "Public" %>
       <%= f.radio_button :public, true , :checked => true , :value => true %></div>
 
-  <br>
   <div><%= label :public, "Private"%>
        <%= f.radio_button :public, false, :value => false%></div>
+<br />
 
   <div class="actions">
     <%= f.submit %>

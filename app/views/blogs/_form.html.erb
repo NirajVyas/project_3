@@ -22,13 +22,15 @@
     </div>
   <% end %>
 
-    <%= f.text_field :date, :placeholder => "Date" %>
+   <p> <%= f.text_field :date, :placeholder => "Date" %> </p>
 
-    <%= f.text_field :tag_list, :placeholder => "Tags, seperated by commas" %>
+   <p> <%= f.text_field :tag_list, :placeholder => "Tags, seperated by commas" %> </p>
 
-    <%= f.text_field :title, :placeholder => "Title" %>
+   <p> <%= f.text_field :title, :placeholder => "Title" %> </p>
 
-    <%= f.text_area :description, :rows => "5", :cols => 10, :placeholder => "Description" %>
+ <div class="text_area_width">
+   <p> <%= f.text_area :description, :rows => 5, :cols => 119, :placeholder => "Description" %> </p>
+ </div>
 
 <br />
 <div class="blog_choose_image">
@@ -45,10 +47,10 @@
    <table>
       <tr>
         <td> Would you like your profile public or private? </td> <br />
-        <td> <%= label :public, "Public" %></td>
-        <td> <%= f.radio_button :public, true , :checked => true , :value => true %> </td>
+        <td> &nbsp&nbsp<%= label :public, "Public" %>&nbsp&nbsp</td>
+        <td> <%= f.radio_button :public, true , :checked => true , :value => true %> &nbsp&nbsp</td>
 
-        <td> <%= label :public, "Private"%> </td>
+        <td> <%= label :public, " Private"%> &nbsp&nbsp</td>
         <td> <%= f.radio_button :public, false, :value => false %> </td>
       </tr>
   </table>
@@ -59,10 +61,10 @@
    <table>
       <tr>
         <td> Would you like to allow comments your posts? </td> <br />
-        <td> <%= label :comments, "Allow" %></td>
+        <td> &nbsp&nbsp<%= label :comments, "Allow" %>&nbsp&nbsp</td>
         <td> <%= f.radio_button :comments, true , :checked => true , :value => true %> </td>
 
-        <td> <%= label :comments, "Disable"%> </td>
+        <td> &nbsp&nbsp<%= label :comments, "Disable"%> &nbsp&nbsp</td>
         <td> <%= f.radio_button :comments, false, :value => false %> </td>
       </tr>
   </table>
