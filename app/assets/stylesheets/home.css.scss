@@ -213,5 +213,25 @@ white_text {
    #email {
     display: none;
   }
+}
+
+@media (max-width: 768px) {
+
+  .navbar_fixed_top {
+    position: fixed; 
+    width: 100%;
+    z-index: 2000;
+    margin-top: -18px;
+  }
+
+ .all_blogs_listing {
+  margin-top: 50px;
+ }
 
 }
+
+
+
+
+
+
