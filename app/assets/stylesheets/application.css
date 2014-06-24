@@ -207,13 +207,5 @@ div.navbar div.container a { color: #EEE}
   color: white;
 }
 
-@media only screen and (max-device-width: 780px) {
-
-  .tabs_container_home {
-    margin-left: 13%;
-  }
-
-}
-
 
 
