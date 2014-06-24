@@ -8,7 +8,7 @@
             <div class="accordion-innerwrap">
                 <ul class="panel-container list-reset" tabindex="1">
                     <li><h4 id="trigger1" class="panel-title"><b class="icon panel-closed" aria-hidden="true">&oplus;</b> Blogs you are following</h4>
-                        <ul class="panel-content list-reset visuallyhidden" aria-expanded="false">
+                        <ul class="panel-content list-reset visuallyhidden" style="display: none;" aria-expanded="false">
                             <li><b class="icon"></b> <abbr title="cascading style sheet">
                                <% current_user.favorite_blogs.each do |favourite| %>
                                <li> <%= link_to favourite.title, favourite %> - 
@@ -29,7 +29,7 @@
             <div class="accordion-innerwrap">
                 <ul class="panel-container list-reset" tabindex="1">
                     <li><h4 id="trigger2" class="panel-title"><b class="icon panel-closed" aria-hidden="true">&oplus;</b> Profile</h4>
-                        <ul class="panel-content list-reset visuallyhidden" aria-expanded="false">
+                        <ul class="panel-content list-reset visuallyhidden" style="display: none;" aria-expanded="false">
                             <li><b class="icon"></b> <abbr title="cascading style sheet">
                               <li>  <%= link_to edit_profile_path do %>
                                       <h4> Edit Your Profile </h4>
@@ -56,7 +56,7 @@
               <div class="accordion-innerwrap">
                   <ul class="panel-container list-reset" tabindex="1">
                       <li><h4 id="trigger3" class="panel-title"><b class="icon panel-closed" aria-hidden="true">&oplus;</b> Map of your visted locations</h4>
-                          <ul class="panel-content list-reset visuallyhidden" aria-expanded="false">
+                          <ul class="panel-content list-reset visuallyhidden" style="display: none;" aria-expanded="false">
                               <li><b class="icon"></b> <abbr title="cascading style sheet">
                                 <li>  
                                 </li> 
@@ -111,7 +111,7 @@ $(document).ready(function() {
     accordion('#trigger1');
     accordion('#trigger2');
     accordion('#trigger3');
-
+    $('#trigger2').addClass('visuallyhidden')
 
 });//end document.ready()
 </script>   
