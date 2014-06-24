@@ -2,25 +2,6 @@
   <h1>Hello <%= current_user.name %></h1>
 </div>
 
-<div id="modal">
-    <header><h1>Blogs you are following</h1></header>
-    <section>
-    <p> 
-      <% current_user.favorite_blogs.each do |favourite| %>
-      <table>
-    <tr>
-      <td> <%= link_to favourite.title, favourite %> </td>
-
-    </tr>
-      </table>
-    <% end %>
-
-    </p>
-    </section>
-</div>
-
-
-
     <div id="pattern" class="pattern">
         <!--Begin Pattern HTML-->
         <div class="accordion clearfix">
@@ -41,6 +22,54 @@
             </div>
         </div>
     </div>
+
+    <div id="pattern" class="pattern">
+        <!--Begin Pattern HTML-->
+        <div class="accordion clearfix">
+            <div class="accordion-innerwrap">
+                <ul class="panel-container list-reset" tabindex="1">
+                    <li><h4 id="trigger2" class="panel-title"><b class="icon panel-closed" aria-hidden="true">&oplus;</b> Profile</h4>
+                        <ul class="panel-content list-reset visuallyhidden" aria-expanded="false">
+                            <li><b class="icon"></b> <abbr title="cascading style sheet">
+                              <li>  <%= link_to edit_profile_path do %>
+                                      <h4> Edit Your Profile </h4>
+                                    <% end %>
+                              </li> 
+                              <li> <h5>Display name: <%= current_user.display %> <h5> </li>
+                              <li> <h5>Profile summery:</h5><p> <%= current_user.public_bio %> </p> </li>
+                              <li> Profile picture:<p class="profile_home"> <%= image_tag current_user.profile_image.thumb.url %> </p></li>
+
+                              </li>
+                            </li> 
+                              </abbr></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        
+
+    <div id="pattern" class="pattern">
+          <!--Begin Pattern HTML-->
+          <div class="accordion clearfix">
+              <div class="accordion-innerwrap">
+                  <ul class="panel-container list-reset" tabindex="1">
+                      <li><h4 id="trigger3" class="panel-title"><b class="icon panel-closed" aria-hidden="true">&oplus;</b> Map of your visted locations</h4>
+                          <ul class="panel-content list-reset visuallyhidden" aria-expanded="false">
+                              <li><b class="icon"></b> <abbr title="cascading style sheet">
+                                <li>  
+                                </li> 
+                           
+                                </li>
+                              </li> 
+                                </abbr></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
         
 <script>
 $(document).ready(function() {
@@ -80,66 +109,15 @@ $(document).ready(function() {
 
     //call to widget trigger1
     accordion('#trigger1');
+    accordion('#trigger2');
+    accordion('#trigger3');
+
 
 });//end document.ready()
 </script>   
 
 
 
-
-
-<script>
-  $(function () {
-    $('#myTab a:last').tab('show')
-  })
-</script>
-
-<div class="tabs_container_home">
-
-<ul class="nav nav-tabs responsive" id="myTab">
-  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-  <li><a href="#profile" data-toggle="tab">Profile</a></li>
-  <li><a href="#messages" data-toggle="tab">Messages</a></li>
-  <li><a href="#test" data-toggle="tab">Settissssngs</a></li>
-</ul>
-
-<div class="tab-content responsive">
-  <div class="tab-pane active" id="home">
-   
-
-  </div>
-    <div class="tab-pane" id="profile">Home</div>
-  <div class="tab-pane" id="profile">Profile</div>
-  <div class="tab-pane" id="messages">Messages</div>
-  <div class="tab-pane" id="test">Messsadawassages</div>
-
-</div>
-
-<script type="text/javascript">
-  (function($) {
-      fakewaffle.responsiveTabs(['xs', 'sm']);
-  })(jQuery);
-</script>
-
-</div>
-
-
-<br /><br /><br /><br />
-<div id="edit_profile_model">
-  <div class="modal_edit">
-    <header><h1>
-      <%= link_to edit_profile_path do %>
-        <h1> Edit Profile </h1>
-      <% end %>
-    </header>
-
-    <section>
-     <p> <h1> <%= current_user.display %> <h1> </p>
-     <p> <h1> <%= current_user.public_bio %> </h1> </p>
-     <p class="profile_home"> <%= image_tag current_user.profile_image.thumb.url %> </p>
-    </section>
-  </div>
-</div>
 
 
 <div id="google_maps_api">
