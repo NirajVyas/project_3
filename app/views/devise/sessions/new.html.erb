@@ -1,23 +1,5 @@
-  <div id="modal">
-    <header><h1>Sign In</h1></header>
-    <section>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div id="signin-email"><%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %></div>
-
-        <div id="signin-password"><%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %></div>
-
-        <% if devise_mapping.rememberable? -%>
-          <div id="signin-checkbox"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-        <% end -%>
-
-        <div id="signin-signin"><%= f.submit "Sign in" %></div>
-      <% end %>
-      <%= render "devise/shared/links" %>
-
-</section>
-</div>
+<div class="container-fluid">
+  <div class="row">
 
 <div id="modal">
     <header><h1>Sign Up</h1></header>
@@ -25,22 +7,27 @@
      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-   <div id="name"> <%= f.label :name %><br />
+   <div id="name"> <br />
   <%= f.text_field :name, :placeholder => "Name" %> </div>
 
-  <div id="email"><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <div id="email"><br />
+  <%= f.email_field :email, autofocus: true, :placeholder => "Email" %></div>
 
-  <div id="password"><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div id="password"><br />
+    <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %></div>
 
-  <div id="password_confirmation"><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <div id="password_confirmation"><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation" %></div>
 
-  <div id="signupbutton"><%= f.submit "Sign up" %></div>
+  <p><div id="signupbutton"><%= f.submit "Sign up" %></div></p>
 <% end %>
 
 </section>
 </div>
+
+
+  </div>
+</div>
+
 
 

@@ -12,7 +12,9 @@
  *= require_tree .
  */
 
-
+#slidy-container {
+width: 100%; overflow: hidden;
+}
 
 .navbar_fixed_top {
 position: fixed; 
@@ -21,6 +23,14 @@ z-index: 2000;
 margin-top: -60px;
 }
 
+.banner {
+  height: 10%;
+  width: 100%;
+  background-color: #668899;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
 
 .home_page_images {
   text-align: center;
@@ -101,7 +111,7 @@ div.navbar div.container a { color: #EEE}
 #slideshow { 
     margin: 50px auto; 
     position: relative; 
-    width: 100%; 
+    width: 1500px; 
     height: 300px; 
     padding: 10px; 
     box-shadow: 0 0 20px rgba(0,0,0,0.4); 
