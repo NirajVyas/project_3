@@ -10,6 +10,7 @@
       <table>
     <tr>
       <td> <%= link_to favourite.title, favourite %> </td>
+
     </tr>
       </table>
     <% end %>
@@ -29,8 +30,10 @@
                         <ul class="panel-content list-reset visuallyhidden" aria-expanded="false">
                             <li><b class="icon"></b> <abbr title="cascading style sheet">
                                <% current_user.favorite_blogs.each do |favourite| %>
-                               <li> <%= link_to favourite.title, favourite %> </li>
+                               <li> <%= link_to favourite.title, favourite %> - 
+                                    <%= favourite.description %> </li>
                               <% end %>
+
                               </abbr></li>
                         </ul>
                     </li>
@@ -56,18 +59,17 @@ $(document).ready(function() {
                 $button.removeClass('active');
                 $('.panel-title .icon').html('&oplus;');
 
-
-                $(this).next().slideUp('slow',function() {
-                    $(this).addClass('visuallyhidden').slideDown(0);
+                $(this).next().slideToggle('slow',function() {
+                    $(this).addClass('visuallyhidden');
                     $('.panel-content').attr( 'aria-expanded','false' );
                 });
             }else {
                 $button.addClass('active');
                 $('.panel-title.active .icon').html('&otimes;');
 
-                $(this).next().slideUp(0,function() {
+                $(this).next().slideToggle('slow',function() {
                     $('.panel-content').attr( 'aria-expanded','true' );
-                    $(this).removeClass('visuallyhidden').slideDown('slow');
+                    $(this).removeClass('visuallyhidden');
                 });
             }
 
