@@ -32,6 +32,16 @@ margin-top: -60px;
   font-size: 3em;
 }
 
+.why_travel_blogger {
+  height: 10%;
+  width: 100%;
+  background-color: #668899;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  font-family: skia;
+}
+
 .home_page_images {
   text-align: center;
 }
