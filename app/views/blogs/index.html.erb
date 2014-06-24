@@ -2,6 +2,29 @@
   <h1>All Blogs</h1>
 </div>
 
+  <div id="pattern" class="pattern">
+          <!--Begin Pattern HTML-->
+          <div class="accordion clearfix">
+              <div class="accordion-innerwrap">
+                  <ul class="panel-container list-reset" tabindex="1">
+                      <li><h4 id="tagstrigger" class="panel-title"><b class="icon panel-closed" aria-hidden="true">&oplus;</b>Most common tags</h4>
+                          <ul class="panel-content list-reset visuallyhidden" aria-expanded="false">
+                              <li><b class="icon"></b> <abbr title="cascading style sheet">
+                                <li>  
+                           <div class="tag_cloud_all">
+                            <% tag_cloud Blog.tag_counts, %w[ s m l] do |tag, css_class| %>
+                              <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+                            <% end %>
+                           </div>
+                              </li> 
+                                </abbr></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
   <div class="modal_post">
     <header>
       <p><h1> Most common tags </h1> </p>
@@ -61,3 +84,48 @@
 <br />
 
 <%= link_to 'New Blog', new_blog_path %>
+
+
+<script>
+$(document).ready(function() {
+    // Collapsible Menu
+    function accordion(trigger) {
+        //variables
+        var $button = $(trigger),//trigger firing the event
+            visible = true;//flag for wayfinding
+
+            $button.hover().css({'cursor': 'pointer'});
+
+        //event
+        $button.click(function() {
+            //conditional check
+            if ( ! visible ) {
+                $button.removeClass('active');
+                $('.panel-title .icon').html('&oplus;');
+
+                $(this).next().slideToggle('slow',function() {
+                    $(this).addClass('visuallyhidden');
+                    $('.panel-content').attr( 'aria-expanded','false' );
+                });
+            }else {
+                $button.addClass('active');
+                $('.panel-title.active .icon').html('&otimes;');
+
+                $(this).next().slideToggle('slow',function() {
+                    $('.panel-content').attr( 'aria-expanded','true' );
+                    $(this).removeClass('visuallyhidden');
+                });
+            }
+
+            visible = !visible;
+            return false
+        });
+    }
+
+    //call to widget trigger1
+    accordion('#tagstrigger');
+ 
+
+
+});//end document.ready()
+</script>   
