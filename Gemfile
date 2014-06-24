@@ -5,11 +5,10 @@ gem 'rails', '3.2.18'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 gem 'devise'
 gem 'carrierwave', '= 0.9.0'
 gem 'youtube_it', '~> 2.4.0'
-gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'best_in_place'
 gem 'wepay'
@@ -21,6 +20,11 @@ gem 'geocoder'
 gem 'rmagick'
 gem 'acts-as-taggable-on'
 gem 'ransack'
+gem 'forem', :github => "radar/forem", :branch => "rails3"
+gem 'kaminari', '0.15.1'
+gem 'cancan'
+gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
+gem "fog"
 
 group :development, :test do
   gem 'pry-rails'
