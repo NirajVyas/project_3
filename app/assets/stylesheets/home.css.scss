@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
 .accordion .panel-title {
     margin: 0;
     padding: .75em;
@@ -207,5 +204,14 @@ white_text {
 
 .landing_page {
   margin-left: 100%;
+
+}
+
+
+@media (max-width: 1223px) {
+
+   #email {
+    display: none;
+  }
 
 }

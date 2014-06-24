@@ -44,18 +44,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Travel Blogger</a>
+      <a class="navbar-brand" href="#" id="email">Travel Blogger</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if current_user %>
-           <p class="navbar-text">Logged in as <%= current_user.email %> |</p>
+           <p class="navbar-text" id="email">Logged in as <%= current_user.email %> |</p>
             <% else %>
         <% end %>
-           <p class="navbar-text"> </p>
-           <p class="navbar-text"> </p>
+
+           <p class="navbar-text" id="email"> </p>
+           <p class="navbar-text" id="email"> </p>
         <% if current_user %>
         <li><a href="<%= root_path %>">Dashboard</a></li>
          <p class="navbar-text"> </p>
