@@ -12,6 +12,161 @@
  *= require_tree .
  */
 
+
+.sign_up_homepage {
+  padding: 10px;
+  width: 100%;
+  padding-left: 33%;
+}
+
+
+form header {
+  margin: 0 0 20px 0; 
+}
+form header div {
+  font-size: 90%;
+  color: #999;
+}
+form header h2 {
+  margin: 0 0 5px 0;
+}
+form > div {
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 0 10px 0;
+}
+form > div > fieldset > div > div {
+  margin: 0 0 5px 0;
+}
+form > div > label,
+legend {
+  width: 25%;
+  float: left;
+  padding-right: 10px;
+}
+form > div > div,
+form > div > fieldset > div {
+  width: 75%;
+  float: right;
+}
+form > div > fieldset label {
+  font-size: 90%;
+}
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password] {
+  width: 50%;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus {
+  outline: 0;
+  border-color: #4697e4;
+}
+
+@media (max-width: 600px) {
+  form > div {
+    margin: 0 0 15px 0; 
+  }
+  form > div > label,
+  legend {
+    width: 100%;
+    float: none;
+    margin: 0 0 5px 0;
+  }
+  form > div > div,
+  form > div > fieldset > div {
+    width: 100%;
+    float: none;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  textarea,
+  select {
+    width: 100%; 
+  }
+}
+@media (min-width: 1200px) {
+  form > div > label,
+  legend {
+    text-align: right;
+  }
+}
+
+
+
+.box{
+  background: #ddd;
+  border: 2px solid #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.4);
+  float: left;
+  height: 300px;
+  margin: 28px;
+  position: relative;
+  width: 300px;
+  transition: background 0.3s ease-out;
+}
+.box p{
+  color: #eee;
+  font-size: 18px;
+  line-height: 34px;
+  padding: 12px;
+  opacity: 0;
+  text-align: center;
+  text-shadow: 0 -2px 1px rgba(0,0,0,0.25), 0 2px 0 #fff;
+  position: absolute;
+  top: 0;
+}
+.box img{
+  height: 300px;
+  width: 300px;
+  opacity: 1; 
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+.box:hover img{
+  opacity: 0;
+}
+/* box colors */
+.box:hover p{
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.box:nth-child(1):hover{
+  background: #448ccb;
+}
+.box:nth-child(2):hover{
+  background: #f68e56;
+}
+.box:nth-child(3):hover{
+  background: #7cc576;
+}
+.box:nth-child(4):hover{
+  background: #448ccb;
+}
+
 #slidy-container {
 width: 100%; overflow: hidden;
 }
@@ -42,9 +197,7 @@ margin-top: -60px;
   font-family: skia;
 }
 
-.home_page_images {
-  text-align: center;
-}
+
 
  .bubble 
 {
@@ -207,5 +360,11 @@ div.navbar div.container a { color: #EEE}
   color: white;
 }
 
+@media (max-width: 600px) {
+
+  .sign_up_homepage {
+  padding: 10px;
+  width: 100%;
+}
 
 

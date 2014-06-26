@@ -14,7 +14,6 @@
                                <li> <%= link_to favourite.title, favourite %> - 
                                     <%= favourite.description %> </li>
                               <% end %>
-
                               </abbr></li>
                         </ul>
                     </li>
@@ -38,7 +37,6 @@
                               <li> <h5>Display name: <%= current_user.display %> <h5> </li>
                               <li> <h5>Profile summery:</h5><p> <%= current_user.public_bio %> </p> </li>
                               <li> Profile picture:<p class="profile_home"> <%= image_tag current_user.profile_image.thumb.url %> </p></li>
-
                               </li>
                             </li> 
                               </abbr></li>
@@ -48,7 +46,6 @@
             </div>
         </div>
     </div>
-        
 
     <div id="pattern" class="pattern">
           <!--Begin Pattern HTML-->
@@ -59,18 +56,57 @@
                           <ul class="panel-content list-reset visuallyhidden" style="display: none;" aria-expanded="false">
                               <li><b class="icon"></b> <abbr title="cascading style sheet">
                                 <li>  
-                                </li> 
-                           
+                                </li>                  
+                                  <div style='width: 900px;'>
+                                     <li> 
+                                      <div id="multi_markers" style='width: 800px; height: 400px;'></div>
+                                     </li>
+                                  </div>
+                                  <li>
+                                    <%= form_for @city do |f| %>
+                                      <div class="city_field">
+                                        <%= f.text_field :city, :placeholder => "Keep track of which cities you have visted." %>
+                                      </div>
+                                      <div class="create_city">
+                                        <%= f.submit %>
+                                      </div>
+                                    <% end %>
+                                  </div>
+                                  </li>
+                                    <% @cities.each do |city| %>
+                                      <table>
+                                          <tr>
+                                            <td><%= city.city %> </td>
+                                          </tr>
+                                      </table>
+                                    <% end %>
+
+<script>
+  var handler = Gmaps.build('Google');
+  handler.buildMap({ internal: {id: 'multi_markers'}}, function(){
+    var markers = handler.addMarkers([
+
+    <% @cities.each do |city| %>
+
+      { lat: <%= city.latitude %>, lng: <%= city.longitude %>},
+      <% end %>
+    ]);
+
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
+
                                 </li>
                               </li> 
-                                </abbr></li>
+                            </abbr></li>
                           </ul>
                       </li>
                   </ul>
               </div>
           </div>
       </div>
-        
+                          
 <script>
 $(document).ready(function() {
     // Collapsible Menu
@@ -116,53 +152,5 @@ $(document).ready(function() {
 });//end document.ready()
 </script>   
 
-
-
-
-
-<div id="google_maps_api">
-    <div class="modal_edit">
-  <div style='width: 900px;'>
-    <div id="multi_markers" style='width: 800px; height: 400px;'></div>
-  </div>
-  <div>
-
-
-
-  <%= form_for @city do |f| %>
-    <div class="city_field">
-      <%= f.text_field :city, :placeholder => "Keep track of which cities you have visted." %>
-    </div>
-    <div class="create_city">
-      <%= f.submit %>
-    </div>
-  <% end %>
-</div>
-
-  <% @cities.each do |city| %>
-    <table>
-        <tr>
-          <td><%= city.city %> </td>
-        </tr>
-    </table>
-  <% end %>
-
-<script>
-
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: {id: 'multi_markers'}}, function(){
-  var markers = handler.addMarkers([
-
-  <% @cities.each do |city| %>
-
-    { lat: <%= city.latitude %>, lng: <%= city.longitude %>},
-    <% end %>
-  ]);
-
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-
-</script>
 
 

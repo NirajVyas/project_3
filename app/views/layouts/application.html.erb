@@ -102,9 +102,9 @@
               <ul class="dropdown-menu">
                 <li><a href="#"  data-toggle="modal" data-target="#myModal1"> Email</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Facebook</a></li>
+                <li><a href="<%= user_omniauth_authorize_path(:facebook) %>">Facebook</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Twitter</a></li>
+                <li><a href="<%= user_omniauth_authorize_path(:twitter) %>">Twitter</a></li>
               </ul>
             </li>
 
@@ -255,51 +255,52 @@ document.body.appendChild(css);
   </div>
 </div>
 
+<div class="sign_up_homepage">
+  <form action="#">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
+         <div id="name"> <br />
+        <%= f.text_field :name, :placeholder => "Name" %> </div>
 
+        <div id="email"><br />
+        <%= f.email_field :email, autofocus: true, :placeholder => "Email" %></div>
 
+        <div id="password"><br />
+          <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %></div>
+
+        <div id="password_confirmation"><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation" %></div>
+
+        <p><div id="signupbutton"><%= f.submit "Sign up" %></div></p>
+      <% end %>
+
+  </form>
+</div>
 
 <br />
 
 <div class="container-fluid">
   <div class="row">
     <div class="why_travel_blogger"> We're sure your asking yourself "Why choose Travel Blogger?" Well.. </div>
+<section class="box">
+      <img src="/assets/response.png" alt="responsive"> 
+  <p>You can use Travel Blogger on your laptop, tablet or on your phone. Never miss an opportunity to blog about your travels again!</p>
+</section>
+<section class="box">
+    <img src="/assets/maps.png" alt="maps"> 
+  <p>Entering your location on a blog will automatically cross reference it with Google Maps to display your exact location.</p>
+</section>
+<section class="box">
+    <img src="/assets/camera.png" alt="YouTube Camera"> 
+  <p>Record directly using your WebCam to upload video blogs to be displayed along with any posts or images.</p>
+</section>
+<section class="box">
+    <img src="/assets/privacy.png" alt="100% privacy">
+  <p>Choose whether to allow other users to view your blogs, comment on your posts or to be seen as a user. We take privacy very seriously. </p>
+</section>
   </div>
 </div>
-
-<br />
-
-
-
-<div class="home_page_images">
-    <a class="th [radius]" href="#">
-      <img src="/assets/response.png" alt="responsive"> 
-    </a>
-
-    <a class="th [radius]" href="#">
-      <img src="/assets/maps.png" alt="maps"> 
-    </a>
-
-    <a class="th [radius]" href="#">
-            <img src="/assets/camera.png" alt="YouTube Camera"> 
-    </a>
-
-    <a class="th [radius]" href="#">
-       <img src="/assets/privacy.png" alt="100% privacy">
-    </div>
-
-
-
- <a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over </a>
- 
-  <!-- Generated markup by the plugin -->
-  <div class="tooltip top">
-    <div class="tooltip-inner">
-     Some tooltip text!
-    </div>
-    <div class="tooltip-arrow"></div>
- </div>
-
 
   <% end %>
 
