@@ -23,11 +23,12 @@ gem 'ransack'
 gem 'forem', :github => "radar/forem", :branch => "rails3"
 gem 'kaminari', '0.15.1'
 gem 'cancan'
-gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem "fog"
 gem 'omniauth'
 gem 'omniauth-facebook' 
 gem 'omniauth-twitter' 
+gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
+
 
 group :development, :test do
   gem 'pry-rails'
