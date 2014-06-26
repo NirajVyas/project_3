@@ -118,8 +118,6 @@ textarea:focus {
   }
 }
 
-
-
 .box{
   background: #ddd;
   border: 2px solid #fff;
@@ -131,6 +129,7 @@ textarea:focus {
   width: 300px;
   transition: background 0.3s ease-out;
 }
+
 .box p{
   color: #eee;
   font-size: 18px;
@@ -244,9 +243,6 @@ textarea {
     height: 300px;
 }
 
-@media (min-width: 767px) {
-body { padding-top: 60px; }
-}
 
 a.btn { color: #FFF; }
 a.btn:visited { color: #FFF; }
@@ -373,6 +369,8 @@ position: fixed;
 width: 100%;
 z-index: 2000;
 margin-top: -60px;
-}}
+}
+}
 
+ }
 

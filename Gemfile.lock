@@ -71,7 +71,7 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.1)
+    bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
@@ -262,6 +262,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.8)
+      actionpack (>= 3.1)
+      execjs
+      rails (>= 3.1)
+      railties (>= 3.1)
     tzinfo (0.3.39)
     uglifier (2.2.1)
       execjs (>= 0.3.0)
@@ -320,6 +325,7 @@ DEPENDENCIES
   ransack
   rmagick
   sass-rails (~> 3.2.3)
+  twitter-bootstrap-rails (~> 2.0rc0)
   uglifier (>= 1.0.3)
   wepay
   youtube_it (~> 2.4.0)
