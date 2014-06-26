@@ -79,7 +79,6 @@
                                             <td><%= city.city %> </td>
                                           </tr>
                                       </table>
-                                    <% end %>
 
 <script>
   var handler = Gmaps.build('Google');
@@ -97,6 +96,7 @@
   });
 </script>
 
+                                  <% end %>
                                 </li>
                               </li> 
                             </abbr></li>
@@ -147,10 +147,51 @@ $(document).ready(function() {
     accordion('#trigger1');
     accordion('#trigger2');
     accordion('#trigger3');
+    accordion('#trigger4')
     $('#trigger2').addClass('visuallyhidden')
 
 });//end document.ready()
 </script>   
+
+<div id="pattern" class="pattern">
+        <!--Begin Pattern HTML-->
+        <div class="accordion clearfix">
+            <div class="accordion-innerwrap">
+                <ul class="panel-container list-reset" tabindex="1">
+                    <li><h4 id="trigger4" class="panel-title"><b class="icon panel-closed" aria-hidden="true">&oplus;</b> Find cheap holiday destinations</h4>
+                        <ul class="panel-content list-reset visuallyhidden" style="display: none;" aria-expanded="false">
+                            <li><b class="icon"></b> <abbr title="cascading style sheet">
+                              <li>
+                                <script type="text/javascript" src="//api.skyscanner.net/api.ashx?key=abd1d229-26da-4694-b860-1780a653f4fa"></script>
+                                <script type="text/javascript">
+                                   skyscanner.load("snippets","2");
+                                   function main(){
+                                       var snippet = new skyscanner.snippets.SearchPanelControl();
+                                       snippet.setShape("box400x400");
+                                       snippet.setCulture("en-GB");
+                                       snippet.setCurrency("GBP");
+                                       snippet.setProduct("flights","1");
+                                       snippet.setProduct("hotels","2");
+                                       snippet.setProduct("carhire","3");
+
+                                       snippet.draw(document.getElementById("snippet_searchpanel"));
+                                   }
+                                   skyscanner.setOnLoadCallback(main);
+                                </script>
+                                
+                                <div id="snippet_searchpanel" style="width: auto; height:auto;"></div>
+                                </li>
+                                </li>
+                              </li> 
+                            </abbr>
+                          </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 
 
 

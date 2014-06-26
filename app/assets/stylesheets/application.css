@@ -12,6 +12,9 @@
  *= require_tree .
  */
 
+#multi_markers {
+  width: 1000px;
+}
 
 .sign_up_homepage {
   padding: 10px;
