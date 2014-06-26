@@ -171,12 +171,7 @@ textarea:focus {
 width: 100%; overflow: hidden;
 }
 
-.navbar_fixed_top {
-position: fixed; 
-width: 100%;
-z-index: 2000;
-margin-top: -60px;
-}
+
 
 .banner {
   height: 10%;
@@ -365,6 +360,16 @@ div.navbar div.container a { color: #EEE}
   .sign_up_homepage {
   padding: 10px;
   width: 100%;
+
 }
+
+
+@media only screen and (min-width : 1200px) {
+.navbar_fixed_top {
+position: fixed; 
+width: 100%;
+z-index: 2000;
+margin-top: -60px;
+}}
 
 

@@ -9,6 +9,7 @@ TravelApp::Application.routes.draw do
 
   match "/feed" => "blogs#feed", :as => :feed, :defaults => { :format => "atom" }
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resource :profile, only: [:edit, :update]
   resources :favorites

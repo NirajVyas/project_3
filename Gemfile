@@ -25,6 +25,9 @@ gem 'kaminari', '0.15.1'
 gem 'cancan'
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem "fog"
+gem 'omniauth'
+gem 'omniauth-facebook' 
+gem 'omniauth-twitter' 
 
 group :development, :test do
   gem 'pry-rails'
