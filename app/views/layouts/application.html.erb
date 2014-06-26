@@ -256,7 +256,6 @@ document.body.appendChild(css);
 </div>
 
 <div class="sign_up_homepage">
-  <form action="#">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
@@ -274,8 +273,6 @@ document.body.appendChild(css);
 
         <p><div id="signupbutton"><%= f.submit "Sign up" %></div></p>
       <% end %>
-
-  </form>
 </div>
 
 <br />

@@ -21,14 +21,14 @@ gem 'rmagick'
 gem 'acts-as-taggable-on'
 gem 'ransack'
 gem 'forem', :github => "radar/forem", :branch => "rails3"
-gem 'kaminari', '0.15.1'
+gem 'kaminari'
 gem 'cancan'
 gem "fog"
 gem 'omniauth'
 gem 'omniauth-facebook' 
 gem 'omniauth-twitter' 
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
-
+gem 'forem-gfm_formatter'
 
 group :development, :test do
   gem 'pry-rails'
