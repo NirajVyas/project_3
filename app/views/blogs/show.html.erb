@@ -74,13 +74,25 @@
   <div class="modal_post">
     <div class="center_image">
       <section>
-        <% post.images.each do |image| %>
+        
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-              <div class="item active">
-                <img src="<%= image.photo_file %>" alt="Image">
+              
+              
+              <% i = 0 %>
+              <% post.images.each do |image| %>
+              <% if i == 0 %>
+                <div class="item active">
+                  <img src="<%= image.photo_file %>" alt="Image">
               </div>
+                <% i += 1 %>
+              <% else %>
+                <div class="item">
+                  <img src="<%= image.photo_file %>" alt="Image">
+                </div>
+              <% end %>
+              <% end %>
             </div>
 
             <!-- Controls -->
@@ -91,10 +103,12 @@
               <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
           </div>
-        <% end %>
+        
       </section>
     </div>
   </div>
+
+
 
 <div class="modal_post">
    
